@@ -23,9 +23,7 @@ class _HomePageState extends State<HomePage> {
             //             title: '详情页传值',
             //           )),
             // )
-            Navigator.pushNamed(context, '/Detail',
-                    arguments: 'arguments ssssssewee21')
-                .then((value) => print(value))
+            Navigator.pushNamed(context, '/Detail', arguments: 'arguments ssssssewee21').then((value) => print(value))
           },
         ),
       ),
@@ -42,10 +40,18 @@ class _HomePageState extends State<HomePage> {
         child: Text('_tabBarController'),
       ),
       OutlinedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/TryTextField');
-          },
-          child: Text('表单输入'))
+        onPressed: () {
+          Navigator.pushNamed(context, '/TryTextField');
+        },
+        child: Text('表单输入'),
+      ),
+      Divider(),
+      OutlinedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/CheckRadio');
+        },
+        child: Text('CheckRadio'),
+      ),
     ]);
   }
 }
