@@ -16,7 +16,6 @@ class _TabsePageState extends State<Tabs> {
   int _currentIndex = 0;
   _TabsePageState(index) {
     this._currentIndex = index;
-    print(this._currentIndex);
   }
 
   List<Widget> list = [HomePage(), NewsPage(), SettingPage()];

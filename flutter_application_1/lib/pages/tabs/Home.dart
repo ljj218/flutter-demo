@@ -38,10 +38,14 @@ class _HomePageState extends State<HomePage> {
       OutlinedButton(
         onPressed: () {
           Navigator.pushNamed(context, '/TabBarControllerPage');
-          print('object');
         },
         child: Text('_tabBarController'),
-      )
+      ),
+      OutlinedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/TryTextField');
+          },
+          child: Text('表单输入'))
     ]);
   }
 }

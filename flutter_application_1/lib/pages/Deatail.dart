@@ -37,7 +37,6 @@ class Detail extends StatelessWidget {
             ),
             ElevatedButton(
                 onPressed: () {
-                  Map mp = {"aa": 1};
                   // Navigator.pop(context, mp);
                   Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(builder: (context) => Tabs(index: 1)),
