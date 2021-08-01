@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class CheckRadio extends StatefulWidget {
@@ -7,6 +10,15 @@ class CheckRadio extends StatefulWidget {
 
 class _CheckState extends State<CheckRadio> {
   bool flag = true;
+
+  //定时器
+  TimeIsOut(context) {
+    var timer;
+    timer = Timer.periodic(Duration(milliseconds: 3000), (t) {
+      Navigator.pop(context);
+      t.cancel();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
