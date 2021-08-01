@@ -7,6 +7,7 @@ import '../tabBarPage/TabBarPage.dart';
 import '../tabBarController/TabBarController.dart';
 import '../textField/TextField.dart';
 import '../check/check.dart';
+import '../http/Http.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -16,6 +17,7 @@ final routes = {
   '/TabBarControllerPage': (context) => TabBarControllerPage(),
   '/TryTextField': (context) => TryTextField(),
   '/CheckRadio': (context) => CheckRadio(),
+  '/HttpPage': (context) => HttpPage(),
 };
 
 // ignore: top_level_function_literal_block
