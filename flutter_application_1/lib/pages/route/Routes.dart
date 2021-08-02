@@ -20,6 +20,7 @@ import '../datePicker/DatePicker.dart';
 import '../dialog/Dialog.dart';
 import '../customDialog/CustomDialog.dart';
 import '../customScrollView/CustomScrollView.dart';
+import '../refresh/refresh.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -33,6 +34,7 @@ final routes = {
   '/DialogPage': (context) => DialogPage(),
   '/CustomDialogPage': (context) => CustomDialogPage(),
   '/CustomScrollView': (context) => CustomScrollViewPage(),
+  '/RefreshPage': (context) => RefreshPage(),
 };
 
 // ignore: top_level_function_literal_block
@@ -43,14 +45,11 @@ var onGenerateRoute = (RouteSettings settings) {
   if (pageContentBuilder != null) {
     if (settings.arguments != null) {
       // ignore: non_constant_identifier_names
-      final Route = MaterialPageRoute(
-          builder: (context) =>
-              pageContentBuilder(context, arguments: settings.arguments));
+      final Route = MaterialPageRoute(builder: (context) => pageContentBuilder(context, arguments: settings.arguments));
       return Route;
     } else {
       // ignore: non_constant_identifier_names
-      final Route =
-          MaterialPageRoute(builder: (context) => pageContentBuilder(context));
+      final Route = MaterialPageRoute(builder: (context) => pageContentBuilder(context));
       return Route;
     }
   }

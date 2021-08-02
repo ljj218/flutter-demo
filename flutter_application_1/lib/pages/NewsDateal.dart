@@ -23,9 +23,6 @@ class _NewsDetailState extends State<NewsDetail> {
     // final _message = ModalRoute.of(context)?.settings.arguments;
     // print(ModalRoute.of(context)?.settings.toString());
     return Scaffold(
-      appBar: AppBar(
-        title: Text('新闻详细页面'),
-      ),
       body: Container(
         child: ListView(
           children: <Widget>[

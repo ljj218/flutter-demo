@@ -34,10 +34,7 @@ class _TryTextFieldState extends State<TryTextField> {
                   height: 10.0,
                 ),
                 TextField(
-                  inputFormatters: [
-                    LengthLimitingTextInputFormatter(6),
-                    FilteringTextInputFormatter.digitsOnly
-                  ],
+                  inputFormatters: [LengthLimitingTextInputFormatter(6), FilteringTextInputFormatter.digitsOnly],
                   decoration: InputDecoration(
                     hintText: '请输入数字账号限制6',
                   ),
@@ -83,27 +80,35 @@ class _TryTextFieldState extends State<TryTextField> {
                 SizedBox(
                   height: 10.0,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.access_alarm),
-                    hintText: '请输入',
+                Container(
+                  height: 20,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.access_alarm),
+                      hintText: '请输入111',
+                    ),
                   ),
                 ),
                 SizedBox(
                   height: 10.0,
                 ),
-                TextField(
-                  controller: userName,
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.access_alarm),
-                    hintText: '初始化名字',
+                Container(
+                  color: Colors.red,
+                  height: 100,
+                  child: TextField(
+                    controller: userName,
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.access_alarm),
+                      hintText: '初始化名字1',
+                      isCollapsed: true,
+                    ),
+                    onChanged: (value) {
+                      // print(value);
+                      setState(() {
+                        this._userName = value; //输入框改变触发事件
+                      });
+                    },
                   ),
-                  onChanged: (value) {
-                    // print(value);
-                    setState(() {
-                      this._userName = value; //输入框改变触发事件
-                    });
-                  },
                 ),
                 SizedBox(
                   height: 10.0,
@@ -132,18 +137,21 @@ class _TryTextFieldState extends State<TryTextField> {
                 ),
                 SizedBox(height: 10),
                 Container(
-                  height: 60,
+                  height: 40,
                   width: 250,
+                  padding: EdgeInsets.all(0),
                   child: TextField(
                     decoration: InputDecoration(
+                      contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                       fillColor: Color(0x30cccccc),
                       filled: true,
+                      labelStyle: TextStyle(fontSize: 20),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(0x00FF0000)),
                           borderRadius: BorderRadius.all(Radius.circular(100))),
                       hintText: 'QQ号/手机号/邮箱',
                       focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0x00000000)),
+                          borderSide: BorderSide(color: Colors.red),
                           borderRadius: BorderRadius.all(Radius.circular(100))),
                     ),
                   ),

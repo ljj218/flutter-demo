@@ -19,8 +19,6 @@ class _RefreshPageState extends State<RefreshPage> {
     });
   }
 
-  List list = [1, 2, 3, 4];
-
   Future<void> _onRefresh() async {
     await Future.delayed(Duration(milliseconds: 2000), () {
       print("刷新结束");
@@ -37,7 +35,7 @@ class _RefreshPageState extends State<RefreshPage> {
         onRefresh: _onRefresh,
         child: ListView.builder(
           controller: _scorollControler,
-          itemCount: this.list.length,
+          itemCount: 30,
           itemBuilder: (context, index) {
             return ListTile(
               title: Text('$index 新闻'),

@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   List list = [];
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return ListView(children: [
       Container(
         child: OutlinedButton(
           child: Text('跳转到详情页面'),
@@ -31,9 +31,7 @@ class _HomePageState extends State<HomePage> {
             //             title: '详情页传值',
             //           )),
             // )
-            Navigator.pushNamed(context, '/Detail',
-                    arguments: 'arguments ssssssewee21')
-                .then((value) => print(value))
+            Navigator.pushNamed(context, '/Detail', arguments: 'arguments ssssssewee21').then((value) => print(value))
           },
         ),
       ),
@@ -97,6 +95,14 @@ class _HomePageState extends State<HomePage> {
         },
         child: Text('自定义滚动组件-customScrollView -physics'),
       ),
+      SizedBox(height: 20),
+      ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/RefreshPage');
+        },
+        child: Text('下拉刷新'),
+      ),
+      SizedBox(height: 30)
     ]);
   }
 }
