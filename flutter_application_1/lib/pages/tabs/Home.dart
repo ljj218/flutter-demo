@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-27 09:04:09
- * @LastEditTime: 2021-07-30 15:51:06
+ * @LastEditTime: 2021-08-02 11:12:49
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\tabs\Home.dart
@@ -89,6 +89,13 @@ class _HomePageState extends State<HomePage> {
           Navigator.pushNamed(context, '/CustomDialogPage');
         },
         child: Text('自定义组件-customDialog'),
+      ),
+      Divider(),
+      ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/CustomScrollView');
+        },
+        child: Text('自定义滚动组件-customScrollView -physics'),
       ),
     ]);
   }

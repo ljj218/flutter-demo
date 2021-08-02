@@ -1,3 +1,11 @@
+/*
+ * @Author: long_jj
+ * @Date: 2021-07-16 14:45:30
+ * @LastEditTime: 2021-08-02 14:06:59
+ * @LastEditors: long_jj
+ * @Description: 
+ * @FilePath: \flutter_application_1\lib\pages\tabBarController\TabBarController.dart
+ */
 import 'package:flutter/material.dart';
 
 class TabBarControllerPage extends StatefulWidget {
@@ -29,7 +37,6 @@ class _TabBarControllerPageState extends State<TabBarControllerPage>
   @override
   //生命周期
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
   }
 
