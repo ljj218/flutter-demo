@@ -129,6 +129,24 @@ class _TryTextFieldState extends State<TryTextField> {
                     print('账号：${this._userName} 密码${this._password}');
                   },
                   child: Text('模拟登录'),
+                ),
+                SizedBox(height: 10),
+                Container(
+                  height: 60,
+                  width: 250,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      fillColor: Color(0x30cccccc),
+                      filled: true,
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(0x00FF0000)),
+                          borderRadius: BorderRadius.all(Radius.circular(100))),
+                      hintText: 'QQ号/手机号/邮箱',
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(0x00000000)),
+                          borderRadius: BorderRadius.all(Radius.circular(100))),
+                    ),
+                  ),
                 )
               ],
             ),
