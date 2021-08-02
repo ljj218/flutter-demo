@@ -1,3 +1,11 @@
+/*
+ * @Author: long_jj
+ * @Date: 2021-07-27 09:04:09
+ * @LastEditTime: 2021-07-30 15:51:06
+ * @LastEditors: long_jj
+ * @Description: 
+ * @FilePath: \flutter_application_1\lib\pages\tabs\Home.dart
+ */
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,7 +31,9 @@ class _HomePageState extends State<HomePage> {
             //             title: '详情页传值',
             //           )),
             // )
-            Navigator.pushNamed(context, '/Detail', arguments: 'arguments ssssssewee21').then((value) => print(value))
+            Navigator.pushNamed(context, '/Detail',
+                    arguments: 'arguments ssssssewee21')
+                .then((value) => print(value))
           },
         ),
       ),
@@ -51,6 +61,34 @@ class _HomePageState extends State<HomePage> {
           Navigator.pushNamed(context, '/CheckRadio');
         },
         child: Text('CheckRadio'),
+      ),
+      SizedBox(height: 10),
+      ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/DatePickerPage');
+        },
+        child: Text('日期组件'),
+      ),
+      InkWell(
+        child: Column(
+          children: [
+            Image.network(
+              'https://sdxcomm.oss-cn-beijing.aliyuncs.com/images/banner/20201125/65f0e0c182db4029bd16dae10b0388bf.jpg',
+              fit: BoxFit.cover,
+            ),
+            Text('弹窗')
+          ],
+        ),
+        onTap: () {
+          Navigator.pushNamed(context, '/DialogPage');
+        },
+      ),
+      Divider(),
+      ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/CustomDialogPage');
+        },
+        child: Text('自定义组件-customDialog'),
       ),
     ]);
   }

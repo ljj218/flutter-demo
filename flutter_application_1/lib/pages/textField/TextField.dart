@@ -34,7 +34,10 @@ class _TryTextFieldState extends State<TryTextField> {
                   height: 10.0,
                 ),
                 TextField(
-                  inputFormatters: [LengthLimitingTextInputFormatter(6), FilteringTextInputFormatter.digitsOnly],
+                  inputFormatters: [
+                    LengthLimitingTextInputFormatter(6),
+                    FilteringTextInputFormatter.digitsOnly
+                  ],
                   decoration: InputDecoration(
                     hintText: '请输入数字账号限制6',
                   ),
