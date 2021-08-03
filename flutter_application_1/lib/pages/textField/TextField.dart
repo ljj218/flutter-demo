@@ -12,6 +12,7 @@ class _TryTextFieldState extends State<TryTextField> {
   TextEditingController userName = TextEditingController();
   String _userName = '';
   String _password = '';
+  GlobalKey _formkey = GlobalKey<FormState>();
   @override
   void initState() {
     super.initState();
@@ -154,6 +155,29 @@ class _TryTextFieldState extends State<TryTextField> {
                           borderSide: BorderSide(color: Colors.red),
                           borderRadius: BorderRadius.all(Radius.circular(100))),
                     ),
+                  ),
+                ),
+                Divider(
+                  height: 10,
+                  color: Colors.red,
+                ),
+                Row(
+                  children: [Text('Form')],
+                ),
+                Divider(
+                  height: 10,
+                  color: Colors.red,
+                ),
+                Form(
+                  autovalidateMode: AutovalidateMode.always,
+                  key: _formkey, //设置globalKey，用于后面获取FormState
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: '用户名',
+                    ),
+                    validator: (v) {
+                      return v!.trim() == '' ? '不能为空' : null;
+                    },
                   ),
                 )
               ],

@@ -1,3 +1,11 @@
+/*
+ * @Author: Long_jj
+ * @Date: 2021-07-20 09:58:34
+ * @LastEditTime: 2021-08-03 22:14:51
+ * @LastEditors: Long_jj
+ * @Description: appbar 变成tabbar 切换
+ * @FilePath: /flutter_application_1/lib/pages/tabBarPage/TabBarPage.dart
+ */
 import 'package:flutter/material.dart';
 
 class TabBarPage extends StatefulWidget {
@@ -7,7 +15,21 @@ class TabBarPage extends StatefulWidget {
   _TabBarPageState createState() => _TabBarPageState();
 }
 
-class _TabBarPageState extends State<TabBarPage> {
+class _TabBarPageState extends State<TabBarPage> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(
+      length: 2,
+      vsync: this,
+    );
+    _tabController.addListener(() {
+      print(_tabController.index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -19,6 +41,7 @@ class _TabBarPageState extends State<TabBarPage> {
             children: [
               Expanded(
                 child: TabBar(
+                  controller: _tabController,
                   tabs: <Widget>[
                     Tab(
                       text: '热门',
@@ -44,6 +67,7 @@ class _TabBarPageState extends State<TabBarPage> {
           // ),
         ),
         body: TabBarView(
+          controller: _tabController,
           children: [
             ListView(
               children: [

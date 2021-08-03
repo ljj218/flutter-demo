@@ -1,10 +1,10 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-27 09:04:09
- * @LastEditTime: 2021-08-02 11:12:49
- * @LastEditors: long_jj
+ * @LastEditTime: 2021-08-03 22:16:01
+ * @LastEditors: Long_jj
  * @Description: 
- * @FilePath: \flutter_application_1\lib\pages\tabs\Home.dart
+ * @FilePath: /flutter_application_1/lib/pages/tabs/Home.dart
  */
 import 'package:flutter/material.dart';
 
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           Navigator.pushNamed(context, '/TabBarPage');
         },
-        child: Text('跳转到TabBar自定义页面'),
+        child: Text('跳转到TabBar自定义页面-覆盖APPBAR'),
       ),
       OutlinedButton(
         onPressed: () {

@@ -15,8 +15,7 @@ class TabBarControllerPage extends StatefulWidget {
   _TabBarControllerPageState createState() => _TabBarControllerPageState();
 }
 
-class _TabBarControllerPageState extends State<TabBarControllerPage>
-    with SingleTickerProviderStateMixin {
+class _TabBarControllerPageState extends State<TabBarControllerPage> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
