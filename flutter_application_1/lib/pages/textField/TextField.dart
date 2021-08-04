@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -12,6 +13,10 @@ class _TryTextFieldState extends State<TryTextField> {
   TextEditingController userName = TextEditingController();
   String _userName = '';
   String _password = '';
+
+  String _phone = '';
+  String _pwd = '';
+
   GlobalKey _formkey = GlobalKey<FormState>();
   @override
   void initState() {
@@ -169,17 +174,75 @@ class _TryTextFieldState extends State<TryTextField> {
                   color: Colors.red,
                 ),
                 Form(
-                  autovalidateMode: AutovalidateMode.always,
-                  key: _formkey, //设置globalKey，用于后面获取FormState
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      labelText: '用户名',
-                    ),
-                    validator: (v) {
-                      return v!.trim() == '' ? '不能为空' : null;
-                    },
-                  ),
-                )
+                    autovalidateMode: AutovalidateMode.always,
+                    key: _formkey, //设置globalKey，用于后面获取FormState
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          keyboardType: TextInputType.number, //弹出数字键盘
+                          inputFormatters: [
+                            //正则匹配
+                            FilteringTextInputFormatter.allow(RegExp("[0-9]")),
+                          ],
+                          maxLength: 11,
+                          decoration: InputDecoration(
+                            labelText: '用户名',
+                            hintText: '您的手机号码',
+                          ),
+                          validator: (v) {
+                            return v!.trim() == '' ? '不能为空' : null;
+                          },
+                          onChanged: (e) {
+                            setState(() {
+                              this._phone = e.trim();
+                            });
+                          },
+                        ),
+                        TextFormField(
+                          obscureText: true,
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            labelText: '密码',
+                            hintText: '您的密码',
+                          ),
+                          validator: (v) {
+                            return v!.trim() == '' ? '密码不能少于6位' : null;
+                          },
+                          onChanged: (e) {
+                            setState(() {
+                              this._pwd = e.trim();
+                            });
+                          },
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 30),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                  child: ElevatedButton(
+                                child: Text('登录'),
+                                onPressed: () {
+                                  //在这里不能通过此方式获取FormState，context不对
+                                  // print(Form.of(context));
+
+                                  // 通过_formKey.currentState 获取FormState后，
+                                  // 调用validate()方法校验用户名密码是否合法，校验
+                                  // 通过后再提交数据。
+
+                                  var _state = _formkey.currentState as FormState;
+
+                                  if (_state.validate()) {
+                                    // _state!.save();
+                                    print("1111");
+                                  }
+                                },
+                              ))
+                            ],
+                          ),
+                        ),
+                      ],
+                    )),
+                Divider(),
               ],
             ),
           ],
