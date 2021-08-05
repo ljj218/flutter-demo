@@ -1,10 +1,10 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-27 09:04:09
- * @LastEditTime: 2021-08-02 11:11:40
- * @LastEditors: long_jj
+ * @LastEditTime: 2021-08-05 21:54:54
+ * @LastEditors: Long_jj
  * @Description: 
- * @FilePath: \flutter_application_1\lib\pages\route\Routes.dart
+ * @FilePath: /flutter_application_1/lib/pages/route/Routes.dart
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/customScrollView/CustomScrollView.dart';
@@ -21,6 +21,7 @@ import '../dialog/Dialog.dart';
 import '../customDialog/CustomDialog.dart';
 import '../customScrollView/CustomScrollView.dart';
 import '../refresh/refresh.dart';
+import '../flexBox/FlexBox.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -35,6 +36,7 @@ final routes = {
   '/CustomDialogPage': (context) => CustomDialogPage(),
   '/CustomScrollView': (context) => CustomScrollViewPage(),
   '/RefreshPage': (context) => RefreshPage(),
+  '/FlexBoxPage': (context) => FlexBoxPage(),
 };
 
 // ignore: top_level_function_literal_block
