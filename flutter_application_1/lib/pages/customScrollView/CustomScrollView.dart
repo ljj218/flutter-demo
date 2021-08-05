@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-02 11:10:17
- * @LastEditTime: 2021-08-02 14:33:36
+ * @LastEditTime: 2021-08-05 17:30:09
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\customScrollView\customScrollView.dart
@@ -23,10 +23,10 @@ class _CustomScrollViewPageState extends State<CustomScrollViewPage> {
   @override
   void initState() {
     super.initState();
-    _scrollController.addListener(() {
-      print('${_scrollController.position.maxScrollExtent}');
-      print('${_scrollController.offset}');
-    });
+    // _scrollController.addListener(() {
+    //   // print('${_scrollController.position.maxScrollExtent}');
+    //   // print('${_scrollController.offset}');
+    // });
   }
 
   @override
@@ -74,7 +74,36 @@ class _CustomScrollViewPageState extends State<CustomScrollViewPage> {
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ));
           }, childCount: 25),
-        )
+        ),
+        new SliverGrid(
+          gridDelegate: new SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 200.0,
+            mainAxisSpacing: 10.0,
+            crossAxisSpacing: 10.0,
+            childAspectRatio: 4.0,
+          ),
+          delegate: new SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return new Container(
+                alignment: Alignment.center,
+                color: Colors.teal[100 * (index % 9)],
+                child: new Text('grid item $index'),
+              );
+            },
+            childCount: 10,
+          ),
+        ),
+        SliverFixedExtentList(
+          itemExtent: 50.0,
+          delegate:
+              SliverChildBuilderDelegate((BuildContext context, int index) {
+            return new Container(
+              alignment: Alignment.center,
+              color: Colors.lightBlue[100 * (index % 9)],
+              child: new Text('list item $index'),
+            );
+          }, childCount: 20),
+        ),
       ],
     ));
   }

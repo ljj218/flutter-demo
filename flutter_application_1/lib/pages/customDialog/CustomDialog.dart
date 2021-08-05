@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-30 15:46:44
- * @LastEditTime: 2021-07-30 15:58:12
+ * @LastEditTime: 2021-08-05 16:39:53
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\customDialog\CustomDialog.dart
@@ -21,6 +21,7 @@ class _CustomDialogPageState extends State<CustomDialogPage> {
   _showCustomDialog() {
     showDialog(
         context: context,
+        barrierDismissible: false, //蒙层是否点击消失
         builder: (context) {
           return MyDialog();
         });
