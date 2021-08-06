@@ -1,10 +1,10 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-27 09:04:09
- * @LastEditTime: 2021-08-05 21:54:54
- * @LastEditors: Long_jj
+ * @LastEditTime: 2021-08-06 17:05:22
+ * @LastEditors: long_jj
  * @Description: 
- * @FilePath: /flutter_application_1/lib/pages/route/Routes.dart
+ * @FilePath: \flutter_application_1\lib\pages\route\Routes.dart
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/customScrollView/CustomScrollView.dart';
@@ -22,6 +22,11 @@ import '../customDialog/CustomDialog.dart';
 import '../customScrollView/CustomScrollView.dart';
 import '../refresh/refresh.dart';
 import '../flexBox/FlexBox.dart';
+import '../AnimatedContainer/AnimatedContainer.dart';
+import '../AnimatedSwitcher/AnimatedSwitcher.dart';
+import '../hero/hero.dart';
+import '../moreAnimated/moreAnimated.dart';
+import '../tweenAnimationBuilder/tweenAnimationBuilder.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -37,6 +42,11 @@ final routes = {
   '/CustomScrollView': (context) => CustomScrollViewPage(),
   '/RefreshPage': (context) => RefreshPage(),
   '/FlexBoxPage': (context) => FlexBoxPage(),
+  '/AnimatedContainerPage': (context) => AnimatedContainerPage(),
+  '/AnimatedSwitcherPage': (context) => AnimatedSwitcherPage(),
+  '/Hero1Demo': (context) => Hero1Demo(),
+  '/MoreAnimatedPage': (context) => MoreAnimatedPage(),
+  '/TweenAnimationBuilderPage': (context) => TweenAnimationBuilderPage(),
 };
 
 // ignore: top_level_function_literal_block
@@ -47,11 +57,14 @@ var onGenerateRoute = (RouteSettings settings) {
   if (pageContentBuilder != null) {
     if (settings.arguments != null) {
       // ignore: non_constant_identifier_names
-      final Route = MaterialPageRoute(builder: (context) => pageContentBuilder(context, arguments: settings.arguments));
+      final Route = MaterialPageRoute(
+          builder: (context) =>
+              pageContentBuilder(context, arguments: settings.arguments));
       return Route;
     } else {
       // ignore: non_constant_identifier_names
-      final Route = MaterialPageRoute(builder: (context) => pageContentBuilder(context));
+      final Route =
+          MaterialPageRoute(builder: (context) => pageContentBuilder(context));
       return Route;
     }
   }

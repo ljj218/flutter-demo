@@ -1,3 +1,11 @@
+/*
+ * @Author: long_jj
+ * @Date: 2021-07-13 17:29:50
+ * @LastEditTime: 2021-08-06 16:39:16
+ * @LastEditors: long_jj
+ * @Description: 
+ * @FilePath: \flutter_application_1\lib\pages\tabs\Tabs.dart
+ */
 import 'package:flutter/material.dart';
 
 import 'Home.dart';
@@ -32,28 +40,28 @@ class _TabsePageState extends State<Tabs> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.compare),
             activeIcon: Icon(
-              Icons.home,
+              Icons.compare,
               color: Colors.blue,
             ),
-            label: '首页',
+            label: '基础组件',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.new_label),
+            icon: Icon(Icons.check_box),
             activeIcon: Icon(
-              Icons.new_label,
+              Icons.check_box,
               color: Colors.blue,
             ),
             label: '新闻',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.camera),
             activeIcon: Icon(
-              Icons.settings,
+              Icons.camera,
               color: Colors.blue,
             ),
-            label: '设置',
+            label: '动画',
           ),
         ],
         currentIndex: this._currentIndex,

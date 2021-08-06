@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-13 14:14:21
- * @LastEditTime: 2021-07-29 15:51:05
+ * @LastEditTime: 2021-08-06 10:50:45
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\main.dart
@@ -16,11 +16,15 @@ void main() {
   runApp(MyApp());
 }
 
+//生成全局的 NavigatorState key 获取context  在其他页面 可以通过 navigatorkey.currentContxt 替代context
+final GlobalKey<NavigatorState> navigatorkey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigatorkey,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
