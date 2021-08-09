@@ -1,10 +1,10 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-06 14:42:51
- * @LastEditTime: 2021-08-06 15:05:37
- * @LastEditors: long_jj
+ * @LastEditTime: 2021-08-09 21:16:14
+ * @LastEditors: Long_jj
  * @Description: 
- * @FilePath: \flutter_application_1\lib\pages\AnimatedSwitcher\AnimatedSwitcher.dart
+ * @FilePath: /flutter_application_1/lib/pages/AnimatedSwitcher/AnimatedSwitcher.dart
  */
 import 'package:flutter/material.dart';
 
@@ -47,7 +47,6 @@ class _AnimationPageState extends State<AnimatedSwitcherPage> {
                     transitionBuilder: (child, animation) {
                       // print(child.toString());
                       // child 子组件
-                      //
                       return FadeTransition(
                         opacity: animation,
                         child: ScaleTransition(
@@ -68,8 +67,7 @@ class _AnimationPageState extends State<AnimatedSwitcherPage> {
                 ),
               ),
               Divider(),
-              Text(
-                  "AnimatedSwicher 监听子组件的变化 添加过度动画 也可以通过key valuekey() 方法生成独一的key"),
+              Text("AnimatedSwicher 监听子组件的变化 添加过度动画 也可以通过key valuekey() 方法生成独一的key"),
               Text('transitionBuilder 函数 自定义切换的效果 ，可以嵌套不同效果')
             ],
           )),

@@ -1,10 +1,10 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-09 15:48:05
- * @LastEditTime: 2021-08-09 17:25:09
- * @LastEditors: long_jj
+ * @LastEditTime: 2021-08-09 21:29:11
+ * @LastEditors: Long_jj
  * @Description: 
- * @FilePath: \flutter_application_1\lib\pages\rotationTransiton\RotationTransiton.dart
+ * @FilePath: /flutter_application_1/lib/pages/rotationTransiton/RotationTransiton.dart
  */
 import 'package:flutter/material.dart';
 
@@ -15,8 +15,7 @@ class RotationTransitionPage extends StatefulWidget {
   _RotationTransitionPageState createState() => _RotationTransitionPageState();
 }
 
-class _RotationTransitionPageState extends State<RotationTransitionPage>
-    with SingleTickerProviderStateMixin {
+class _RotationTransitionPageState extends State<RotationTransitionPage> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
   late Animation _animation;
@@ -25,8 +24,7 @@ class _RotationTransitionPageState extends State<RotationTransitionPage>
 
   @override
   void initState() {
-    _controller = AnimationController(
-        duration: Duration(milliseconds: 1000), vsync: this);
+    _controller = AnimationController(duration: Duration(milliseconds: 1000), vsync: this);
     // 可以挂在 Animation 进行详细设置 然后 turns 可以设置成 _animation
     // _animation = Tween(begin: .0, end: .5).animate(_controller);
     super.initState();
