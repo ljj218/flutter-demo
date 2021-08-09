@@ -1,7 +1,7 @@
 /*
  * @Author: Long_jj
  * @Date: 2021-07-20 09:58:34
- * @LastEditTime: 2021-08-06 17:16:56
+ * @LastEditTime: 2021-08-09 16:18:03
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\tabs\Setting.dart
@@ -88,6 +88,15 @@ class _SettingPageState extends State<SettingPage> {
                     'TweenAnimationBuilder - 在设置的Tween的begin和end之前变动，形成动画;另外介绍了Transiform组件'),
                 onTap: () {
                   Navigator.pushNamed(context, '/TweenAnimationBuilderPage');
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text('旋转动画-RotationTransiton'),
+                subtitle: Text(
+                    'TweenAnimationBuilder - 在设置的Tween的begin和end之前变动，形成动画;另外介绍了Transiform组件'),
+                onTap: () {
+                  Navigator.pushNamed(context, '/RotationTransitonPage');
                 },
               ),
             ],

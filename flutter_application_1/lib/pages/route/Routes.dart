@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-27 09:04:09
- * @LastEditTime: 2021-08-06 17:05:22
+ * @LastEditTime: 2021-08-09 16:16:56
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\route\Routes.dart
@@ -27,6 +27,7 @@ import '../AnimatedSwitcher/AnimatedSwitcher.dart';
 import '../hero/hero.dart';
 import '../moreAnimated/moreAnimated.dart';
 import '../tweenAnimationBuilder/tweenAnimationBuilder.dart';
+import '../rotationTransiton/RotationTransiton.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -47,6 +48,7 @@ final routes = {
   '/Hero1Demo': (context) => Hero1Demo(),
   '/MoreAnimatedPage': (context) => MoreAnimatedPage(),
   '/TweenAnimationBuilderPage': (context) => TweenAnimationBuilderPage(),
+  '/RotationTransitonPage': (context) => RotationTransitionPage(),
 };
 
 // ignore: top_level_function_literal_block

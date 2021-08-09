@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-06 16:59:17
- * @LastEditTime: 2021-08-06 17:55:49
+ * @LastEditTime: 2021-08-09 15:15:16
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\tweenAnimationBuilder\tweenAnimationBuilder.dart
@@ -19,13 +19,34 @@ class TweenAnimationBuilderPage extends StatefulWidget {
 
 class _TweenAnimationBuilderPageState extends State<TweenAnimationBuilderPage> {
   double _value = 0.785;
+
+  double whole = 0.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('补间动画-tweenAnimationBuilder'),
       ),
-      body: Column(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            this.whole += 1;
+            if (this.whole >= 9.0) {
+              this.whole = 0.0;
+            }
+          });
+        },
+        child: Text(
+          '+',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: SingleChildScrollView(
+          child: Column(
         children: [
           TweenAnimationBuilder(
             tween: Tween<double>(begin: 20.0, end: 100.0),
@@ -54,7 +75,7 @@ class _TweenAnimationBuilderPageState extends State<TweenAnimationBuilderPage> {
           Text('动画开始后 从begin到end 但是变动end的值 ，动画不是从begin再到end,而是 end1 - end2'),
           Divider(),
           TweenAnimationBuilder(
-            tween: Tween<double>(begin: 0.0, end: _value),
+            tween: Tween<double>(begin: 1.0, end: _value),
             duration: Duration(seconds: 2),
             builder: (context, double value, child) {
               return Transform.rotate(
@@ -79,8 +100,106 @@ class _TweenAnimationBuilderPageState extends State<TweenAnimationBuilderPage> {
               });
             },
           ),
+          SizedBox(height: 30),
+          Divider(),
+          Container(
+            width: 200,
+            height: 40,
+            color: Colors.blue,
+            child: TweenAnimationBuilder(
+              duration: const Duration(milliseconds: 600),
+              tween: Tween<double>(end: whole),
+              builder: (BuildContext context, dynamic value, Widget? child) {
+                int val = value ~/ 1;
+                double pos = value - val;
+                return Stack(
+                  children: [
+                    Positioned(
+                        top: -30 * pos, //0 -> -30
+                        child: Opacity(
+                          opacity: 1 - pos,
+                          child: Text(
+                            '$val',
+                            style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )),
+                    Positioned(
+                        top: 30 * (1 - pos), // 30 -> 0
+                        child: Opacity(
+                          opacity: pos,
+                          child: Text(
+                            '${val + 1}',
+                            style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )),
+                  ],
+                );
+              },
+              onEnd: () {
+                // setState(() {
+                //   this.whole += 1;
+                //   if (this.whole >= 9.0) {
+                //     this.whole = 0.0;
+                //   }
+                // });
+              },
+            ),
+          )
         ],
-      ),
+      )),
+    );
+  }
+}
+
+class Counter extends StatelessWidget {
+  double count;
+  int time;
+  Counter(this.count, {this.time = 600});
+
+  @override
+  Widget build(BuildContext context) {
+    return TweenAnimationBuilder(
+      duration: Duration(milliseconds: time),
+      tween: Tween<double>(end: count),
+      builder: (BuildContext context, dynamic value, Widget? child) {
+        int val = value ~/ 1;
+        double pos = value - val;
+        return Stack(
+          children: [
+            Positioned(
+                top: -30 * pos, //0 -> -30
+                child: Opacity(
+                  opacity: 1 - pos,
+                  child: Text(
+                    '$val',
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.white,
+                    ),
+                  ),
+                )),
+            Positioned(
+                top: 30 * (1 - pos), // 30 -> 0
+                child: Opacity(
+                  opacity: pos,
+                  child: Text(
+                    '${val + 1}',
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.white,
+                    ),
+                  ),
+                )),
+          ],
+        );
+      },
+      onEnd: () {},
     );
   }
 }
