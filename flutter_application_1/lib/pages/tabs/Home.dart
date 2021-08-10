@@ -1,10 +1,10 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-27 09:04:09
- * @LastEditTime: 2021-08-03 22:16:01
- * @LastEditors: Long_jj
+ * @LastEditTime: 2021-08-09 17:53:30
+ * @LastEditors: long_jj
  * @Description: 
- * @FilePath: /flutter_application_1/lib/pages/tabs/Home.dart
+ * @FilePath: \flutter_application_1\lib\pages\tabs\Home.dart
  */
 import 'package:flutter/material.dart';
 
@@ -31,7 +31,9 @@ class _HomePageState extends State<HomePage> {
             //             title: '详情页传值',
             //           )),
             // )
-            Navigator.pushNamed(context, '/Detail', arguments: 'arguments ssssssewee21').then((value) => print(value))
+            Navigator.pushNamed(context, '/Detail',
+                    arguments: 'arguments ssssssewee21')
+                .then((value) => print(value))
           },
         ),
       ),
@@ -102,7 +104,7 @@ class _HomePageState extends State<HomePage> {
         },
         child: Text('下拉刷新'),
       ),
-      SizedBox(height: 30)
+      SizedBox(height: 30),
     ]);
   }
 }

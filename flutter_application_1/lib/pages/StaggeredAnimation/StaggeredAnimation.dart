@@ -1,10 +1,10 @@
 /*
  * @Author: Long_jj
  * @Date: 2021-08-09 21:30:08
- * @LastEditTime: 2021-08-09 22:12:58
- * @LastEditors: Long_jj
+ * @LastEditTime: 2021-08-10 09:55:10
+ * @LastEditors: long_jj
  * @Description: 
- * @FilePath: /flutter_application_1/lib/pages/StaggeredAnimation/StaggeredAnimation.dart
+ * @FilePath: \flutter_application_1\lib\pages\StaggeredAnimation\StaggeredAnimation.dart
  */
 
 import 'package:flutter/material.dart';
@@ -16,7 +16,8 @@ class StaggeredAnimationPage extends StatefulWidget {
   _StaggeredAnimationPageState createState() => _StaggeredAnimationPageState();
 }
 
-class _StaggeredAnimationPageState extends State<StaggeredAnimationPage> with SingleTickerProviderStateMixin {
+class _StaggeredAnimationPageState extends State<StaggeredAnimationPage>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
   @override
@@ -115,7 +116,12 @@ class slide extends StatelessWidget {
   Interval interval;
   Color color;
   Tween<Offset> tween;
-  slide({Key? key, required this.controller, required this.interval, required this.color, required this.tween})
+  slide(
+      {Key? key,
+      required this.controller,
+      required this.interval,
+      required this.color,
+      required this.tween})
       : super(key: key);
 
   @override
