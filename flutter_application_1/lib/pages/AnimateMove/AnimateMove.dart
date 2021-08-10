@@ -1,10 +1,10 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-10 14:07:45
- * @LastEditTime: 2021-08-10 16:50:43
- * @LastEditors: long_jj
+ * @LastEditTime: 2021-08-10 21:22:46
+ * @LastEditors: Long_jj
  * @Description: 
- * @FilePath: \flutter_application_1\lib\pages\AnimateMove\AnimateMove.dart
+ * @FilePath: /flutter_application_1/lib/pages/AnimateMove/AnimateMove.dart
  */
 
 import 'package:flutter/material.dart';
@@ -16,8 +16,7 @@ class AnimateMovePage extends StatefulWidget {
   _AnimateMovePageState createState() => _AnimateMovePageState();
 }
 
-class _AnimateMovePageState extends State<AnimateMovePage>
-    with TickerProviderStateMixin {
+class _AnimateMovePageState extends State<AnimateMovePage> with TickerProviderStateMixin {
   int num = 0;
   bool flag = false;
   late AnimationController _animationController;
@@ -26,8 +25,7 @@ class _AnimateMovePageState extends State<AnimateMovePage>
 
   @override
   void initState() {
-    _animationController = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 4000));
+    _animationController = AnimationController(vsync: this, duration: Duration(milliseconds: 4000));
 
     //第一种方法 计算整个动画全程的时间 为 4+7+8 19秒 停顿一秒 利用 _ScaleController.value 切换多个Tween 实现动画
     // _acaleController =
@@ -62,18 +60,15 @@ class _AnimateMovePageState extends State<AnimateMovePage>
   Widget build(BuildContext context) {
     // ++++ ------- ========
     //前4秒
-    Animation animaton1 = Tween(begin: 0.0, end: 1.0)
-        .chain(CurveTween(curve: Interval(0.0, 0.2)))
-        .animate(_acaleController);
+    Animation animaton1 =
+        Tween(begin: 0.0, end: 1.0).chain(CurveTween(curve: Interval(0.0, 0.2))).animate(_acaleController);
     //后8秒
-    Animation animaton2 = Tween(begin: 1.0, end: 0.0)
-        .chain(CurveTween(curve: Interval(0.55, 0.95)))
-        .animate(_acaleController);
+    Animation animaton2 =
+        Tween(begin: 1.0, end: 0.0).chain(CurveTween(curve: Interval(0.55, 0.95))).animate(_acaleController);
 
     //中间 7秒
-    Animation animaton3 = Tween(begin: 1.0, end: 0.5)
-        .chain(CurveTween(curve: Interval(0.2, 0.55)))
-        .animate(_acaleController);
+    Animation animaton3 =
+        Tween(begin: 1.0, end: 0.5).chain(CurveTween(curve: Interval(0.2, 0.55))).animate(_acaleController);
 
     return Scaffold(
       appBar: AppBar(
@@ -118,8 +113,7 @@ class _AnimateMovePageState extends State<AnimateMovePage>
               animation: _acaleController,
               builder: (context, child) {
                 return FadeTransition(
-                  opacity:
-                      Tween(begin: 1.0, end: 0.0).animate(_opacityController),
+                  opacity: Tween(begin: 1.0, end: 0.0).animate(_opacityController),
                   child: Container(
                     width: 300,
                     height: 300,
@@ -171,7 +165,7 @@ class _AnimateMovePageState extends State<AnimateMovePage>
                   child: Text('STOP'),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
