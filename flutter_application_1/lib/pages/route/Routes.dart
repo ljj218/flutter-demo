@@ -1,10 +1,10 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-27 09:04:09
- * @LastEditTime: 2021-08-10 21:23:31
- * @LastEditors: Long_jj
+ * @LastEditTime: 2021-08-11 14:29:27
+ * @LastEditors: long_jj
  * @Description: 
- * @FilePath: /flutter_application_1/lib/pages/route/Routes.dart
+ * @FilePath: \flutter_application_1\lib\pages\route\Routes.dart
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/customScrollView/CustomScrollView.dart';
@@ -32,6 +32,7 @@ import '../StaggeredAnimation/StaggeredAnimation.dart';
 import '../AnimatedBuilder/AnimatedBuilder.dart';
 import '../AnimateMove/AnimateMove.dart';
 import '../CustomPaint/CustomPaint.dart';
+import '../Key/Key.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -57,6 +58,7 @@ final routes = {
   '/AnimatedBuilderPage': (context) => AnimatedBuilderPage(),
   '/AnimateMovePage': (context) => AnimateMovePage(),
   '/CustomPaintPage': (context) => CustomPaintPage(),
+  '/KeyPage': (context) => KeyPage(),
 };
 
 // ignore: top_level_function_literal_block
@@ -67,11 +69,14 @@ var onGenerateRoute = (RouteSettings settings) {
   if (pageContentBuilder != null) {
     if (settings.arguments != null) {
       // ignore: non_constant_identifier_names
-      final Route = MaterialPageRoute(builder: (context) => pageContentBuilder(context, arguments: settings.arguments));
+      final Route = MaterialPageRoute(
+          builder: (context) =>
+              pageContentBuilder(context, arguments: settings.arguments));
       return Route;
     } else {
       // ignore: non_constant_identifier_names
-      final Route = MaterialPageRoute(builder: (context) => pageContentBuilder(context));
+      final Route =
+          MaterialPageRoute(builder: (context) => pageContentBuilder(context));
       return Route;
     }
   }

@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-27 09:04:09
- * @LastEditTime: 2021-08-09 17:53:30
+ * @LastEditTime: 2021-08-11 14:30:07
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\tabs\Home.dart
@@ -105,6 +105,12 @@ class _HomePageState extends State<HomePage> {
         child: Text('下拉刷新'),
       ),
       SizedBox(height: 30),
+      ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/KeyPage');
+        },
+        child: Text('key'),
+      ),
     ]);
   }
 }
