@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-27 09:04:09
- * @LastEditTime: 2021-08-11 14:29:27
+ * @LastEditTime: 2021-08-12 15:03:06
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\route\Routes.dart
@@ -33,6 +33,8 @@ import '../AnimatedBuilder/AnimatedBuilder.dart';
 import '../AnimateMove/AnimateMove.dart';
 import '../CustomPaint/CustomPaint.dart';
 import '../Key/Key.dart';
+import '../DragTheSorting/DragTheSorting.dart';
+import '../myDragSorting/myDragSorting.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -59,6 +61,8 @@ final routes = {
   '/AnimateMovePage': (context) => AnimateMovePage(),
   '/CustomPaintPage': (context) => CustomPaintPage(),
   '/KeyPage': (context) => KeyPage(),
+  '/DragTheSortingPage': (context) => DragTheSortingPage(),
+  '/MyDragSortingPage': (context) => MyDragSortingPage(),
 };
 
 // ignore: top_level_function_literal_block

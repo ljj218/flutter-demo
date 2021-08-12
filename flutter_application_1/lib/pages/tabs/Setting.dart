@@ -1,10 +1,10 @@
 /*
  * @Author: Long_jj
  * @Date: 2021-07-20 09:58:34
- * @LastEditTime: 2021-08-10 21:24:39
- * @LastEditors: Long_jj
+ * @LastEditTime: 2021-08-12 15:04:05
+ * @LastEditors: long_jj
  * @Description: 
- * @FilePath: /flutter_application_1/lib/pages/tabs/Setting.dart
+ * @FilePath: \flutter_application_1\lib\pages\tabs\Setting.dart
  */
 import 'package:flutter/material.dart';
 
@@ -68,11 +68,13 @@ class _SettingPageState extends State<SettingPage> {
                           'https://sdxcomm.oss-cn-beijing.aliyuncs.com/images/banner/20201125/65f0e0c182db4029bd16dae10b0388bf.jpg'),
                     ),
                   )),
-              Text('hero - 当用户点击一张动画切换页面，在另一个页面也存在这个动画使用hero组件最合适； timeDilation 延时动画'),
+              Text(
+                  'hero - 当用户点击一张动画切换页面，在另一个页面也存在这个动画使用hero组件最合适； timeDilation 延时动画'),
               Divider(),
               ListTile(
                 title: Text('更多的动画控件和曲线-curve'),
-                subtitle: Text('AnimatedOpacity - 透明度过度动画  和AnimatedContainer 类似,有个Opacity属性; AnimatedPadding'),
+                subtitle: Text(
+                    'AnimatedOpacity - 透明度过度动画  和AnimatedContainer 类似,有个Opacity属性; AnimatedPadding'),
                 onTap: () {
                   Navigator.pushNamed(context, '/MoreAnimatedPage');
                 },
@@ -80,7 +82,8 @@ class _SettingPageState extends State<SettingPage> {
               Divider(),
               ListTile(
                 title: Text('补间动画-TweenAnimationBuilder'),
-                subtitle: Text('TweenAnimationBuilder - 在设置的Tween的begin和end之前变动，形成动画;另外介绍了Transiform组件'),
+                subtitle: Text(
+                    'TweenAnimationBuilder - 在设置的Tween的begin和end之前变动，形成动画;另外介绍了Transiform组件'),
                 onTap: () {
                   Navigator.pushNamed(context, '/TweenAnimationBuilderPage');
                 },
@@ -88,7 +91,8 @@ class _SettingPageState extends State<SettingPage> {
               Divider(),
               ListTile(
                 title: Text('旋转动画-RotationTransiton'),
-                subtitle: Text('TweenAnimationBuilder - 在设置的Tween的begin和end之前变动，形成动画;另外介绍了Transiform组件'),
+                subtitle: Text(
+                    'TweenAnimationBuilder - 在设置的Tween的begin和end之前变动，形成动画;另外介绍了Transiform组件'),
                 onTap: () {
                   Navigator.pushNamed(context, '/RotationTransitonPage');
                 },
@@ -117,6 +121,22 @@ class _SettingPageState extends State<SettingPage> {
                 subtitle: Text('...'),
                 onTap: () {
                   Navigator.pushNamed(context, '/CustomPaintPage');
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text('拖拽排序游戏教程 '),
+                subtitle: Text('按照颜色深浅拖拽进行排序的小游戏'),
+                onTap: () {
+                  Navigator.pushNamed(context, '/DragTheSortingPage');
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text('学习拖拽排序游戏 '),
+                subtitle: Text('按照颜色深浅拖拽进行排序的小游戏'),
+                onTap: () {
+                  Navigator.pushNamed(context, '/MyDragSortingPage');
                 },
               ),
               SizedBox(height: 50),

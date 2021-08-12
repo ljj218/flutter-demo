@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-15 09:18:45
- * @LastEditTime: 2021-08-02 14:00:03
+ * @LastEditTime: 2021-08-12 17:01:51
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\NewsDateal.dart
@@ -61,6 +61,11 @@ class _NewsDetailState extends State<NewsDetail> {
             ),
             ListTile(
               title: Text('新闻详细~~~'),
+            ),
+            Container(
+              width: 399,
+              height: 33,
+              color: Color.fromARGB(100, 222, 3, 34),
             )
           ],
         ),

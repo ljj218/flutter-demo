@@ -1,10 +1,10 @@
 /*
  * @Author: Long_jj
  * @Date: 2021-08-11 21:16:16
- * @LastEditTime: 2021-08-11 21:53:58
- * @LastEditors: Long_jj
+ * @LastEditTime: 2021-08-12 14:24:24
+ * @LastEditors: long_jj
  * @Description: https://pastebin.com/E232Wnt0
- * @FilePath: /flutter_application_1/lib/pages/DragTheSorting/DragTheSorting.dart
+ * @FilePath: \flutter_application_1\lib\pages\DragTheSorting\DragTheSorting.dart
  */
 import 'package:flutter/material.dart';
 
@@ -89,7 +89,13 @@ class Box extends StatelessWidget {
   final double x, y;
   final Function(Color) onDrag;
 
-  Box({required this.color, required this.x, required this.y, required this.onDrag, Key? key}) : super(key: key);
+  Box(
+      {required this.color,
+      required this.x,
+      required this.y,
+      required this.onDrag,
+      Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
