@@ -11,7 +11,7 @@ main(List<String> args) {
   List<int> list = [1, 2, 3, 4];
 
   int a = list.removeAt(1);
-  list.insert(3, a);
+  list.;
   print(a);
   print(list);
 }

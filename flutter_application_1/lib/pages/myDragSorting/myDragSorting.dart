@@ -1,14 +1,12 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-12 14:29:20
- * @LastEditTime: 2021-08-12 18:00:53
+ * @LastEditTime: 2021-08-13 11:21:37
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\myDragSorting\myDragSorting.dart
  */
 import 'dart:math';
-
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class MyDragSortingPage extends StatefulWidget {
@@ -25,7 +23,7 @@ class _MyDragSortingPageState extends State<MyDragSortingPage> {
   GlobalKey _key = GlobalKey();
   late int startIndex;
   late int endIndex;
-
+  late int _slot; //拖动的元素序号
   _shuffle() {
     int r = Random().nextInt(255);
     int g = Random().nextInt(255);
@@ -69,42 +67,59 @@ class _MyDragSortingPageState extends State<MyDragSortingPage> {
       //     )),
       body: Listener(
         onPointerDown: (e) {
-          startIndex = (e.position.dx / 54).floor();
-
-          // print("start $startIndex");
+          // startIndex = (e.position.dx / 54).floor();
         },
         onPointerMove: (e) {
           // print(e.position.dx);
+          double x = e.position.dx;
+          //第二 //互换
+          if (x > (_slot + 1) * Box.width) {
+            if (_slot >= _colors.length - 1) return;
+            setState(() {
+              final c = _colors[_slot];
+              _colors[_slot] = _colors[_slot + 1];
+              _colors[_slot + 1] = c;
+              _slot++;
+            });
+          } else if (x < _slot * Box.width) {
+            if (_slot == 0) return;
+            setState(() {
+              final c = _colors[_slot];
+              _colors[_slot] = _colors[_slot - 1];
+              _colors[_slot - 1] = c;
+              _slot--;
+            });
+          }
         },
         onPointerUp: (e) {
-          endIndex = (e.position.dx / 54).floor();
-          if (endIndex < 0) {
-            endIndex = 0;
-          } else if (endIndex > 5) {
-            endIndex = 5;
-          }
-          // if (startIndex < endIndex) {
-          //   endIndex -= 1;
+          // endIndex = (e.position.dx / 54).floor();
+          // if (endIndex < 0) {
+          //   endIndex = 0;
+          // } else if (endIndex > 5) {
+          //   endIndex = 5;
           // }
-          if (endIndex == startIndex) return;
-          print('$endIndex $startIndex ');
-
-          setState(() {
-            Color a = _colors[startIndex];
-            _colors[startIndex] = _colors[endIndex];
-            _colors[endIndex] = a;
-            // _colors.insert(endIndex - 1, a);
-          });
+          // if (endIndex == startIndex) return;
+          // setState(() {
+          //   Color a = _colors[startIndex];
+          //   _colors[startIndex] = _colors[endIndex];
+          //   _colors[endIndex] = a;
+          //   // _colors.insert(endIndex - 1, a);
+          // });
         },
-        child: Row(
+        child: Stack(
           key: _key,
           children: List.generate(
             6,
             (index) => Box(
-              key: ValueKey(index),
-              color: _colors[index],
-              left: (Box.width * index),
-            ),
+                key: ValueKey(_colors[index]),
+                color: _colors[index],
+                left: (Box.width * index),
+                onDrag: (color) {
+                  int num = _colors.indexOf(color);
+                  _slot = num;
+
+                  // print(num);
+                }),
           ),
         ),
       ),
@@ -119,39 +134,33 @@ class _MyDragSortingPageState extends State<MyDragSortingPage> {
 class Box extends StatelessWidget {
   static const width = 50.0;
   static const height = 150.0;
+  static const margin = 2.0;
   Color color;
   double left;
-  Box({required Key key, required this.color, required this.left})
-      : super(key: key);
+  Function onDrag;
+  Box({
+    required Key key,
+    required this.color,
+    required this.left,
+    required this.onDrag,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final container = Container(
+      width: width - (margin * 2),
+      height: height,
+      color: color,
+    );
     return AnimatedPositioned(
         duration: Duration(milliseconds: 100),
         top: 0,
         left: left,
         child: Draggable(
-          child: Container(
-            width: width,
-            height: height,
-            color: color,
-            margin: EdgeInsets.all(2.0),
-          ),
-          feedback: Container(
-            width: width,
-            height: height,
-            color: color,
-            margin: EdgeInsets.all(2.0),
-          ),
-          childWhenDragging: Opacity(
-            opacity: 0,
-            child: Container(
-              width: width,
-              height: height,
-              color: color,
-              margin: EdgeInsets.all(2.0),
-            ),
-          ),
+          onDragStarted: () => onDrag(color),
+          child: container,
+          feedback: container,
+          childWhenDragging: Opacity(opacity: 0, child: container),
         ));
   }
 }

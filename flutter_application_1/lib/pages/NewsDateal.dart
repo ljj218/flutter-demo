@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-15 09:18:45
- * @LastEditTime: 2021-08-12 17:01:51
+ * @LastEditTime: 2021-08-13 10:46:13
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\NewsDateal.dart
@@ -23,6 +23,9 @@ class _NewsDetailState extends State<NewsDetail> {
     // final _message = ModalRoute.of(context)?.settings.arguments;
     // print(ModalRoute.of(context)?.settings.toString());
     return Scaffold(
+      appBar: AppBar(
+        title: Text('sss'),
+      ),
       body: Container(
         child: ListView(
           children: <Widget>[

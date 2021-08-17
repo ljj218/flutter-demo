@@ -1,14 +1,14 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-06 15:17:26
- * @LastEditTime: 2021-08-06 15:39:18
+ * @LastEditTime: 2021-08-13 17:49:30
  * @LastEditors: long_jj
  * @Description:   需要两边配置tag 作为统一标识
  * @FilePath: \flutter_application_1\lib\pages\hero\hero.dart
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart' show timeDilation;
+// import 'package:flutter/scheduler.dart' show timeDilation;
 
 class Hero1Demo extends StatefulWidget {
   Hero1Demo({Key? key}) : super(key: key);
@@ -21,7 +21,13 @@ class _NameStatePage extends State<Hero1Demo> {
   @override
   void initState() {
     super.initState();
-    timeDilation = 5.0; //延时动画
+    // timeDilation = 5.0; //延时动画
+  }
+
+  @override
+  void dispose() {
+    // timeDilation = 0;
+    super.dispose();
   }
 
   @override
