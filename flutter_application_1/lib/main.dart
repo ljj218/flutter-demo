@@ -1,14 +1,14 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-13 14:14:21
- * @LastEditTime: 2021-08-06 10:50:45
+ * @LastEditTime: 2021-08-17 10:10:27
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\main.dart
  */
 import 'package:flutter/material.dart';
 
-import 'pages/route/Routes.dart';
+import 'route/Routes.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 

@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-15 09:18:45
- * @LastEditTime: 2021-08-13 10:46:13
+ * @LastEditTime: 2021-08-17 10:14:20
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\NewsDateal.dart
@@ -20,6 +20,7 @@ class NewsDetail extends StatefulWidget {
 class _NewsDetailState extends State<NewsDetail> {
   @override
   Widget build(BuildContext context) {
+    //通过 ModalRoute.of(context) 获取参数
     // final _message = ModalRoute.of(context)?.settings.arguments;
     // print(ModalRoute.of(context)?.settings.toString());
     return Scaffold(

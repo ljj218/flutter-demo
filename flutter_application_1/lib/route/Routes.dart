@@ -1,40 +1,41 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-27 09:04:09
- * @LastEditTime: 2021-08-12 15:03:06
+ * @LastEditTime: 2021-08-17 10:16:09
  * @LastEditors: long_jj
  * @Description: 
- * @FilePath: \flutter_application_1\lib\pages\route\Routes.dart
+ * @FilePath: \flutter_application_1\lib\route\Routes.dart
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/customScrollView/CustomScrollView.dart';
 
-import '../NewsDateal.dart';
-import '../tabs/Tabs.dart';
-import '../Deatail.dart';
-import '../tabBarPage/TabBarPage.dart';
-import '../tabBarController/TabBarController.dart';
-import '../textField/TextField.dart';
-import '../check/check.dart';
-import '../datePicker/DatePicker.dart';
-import '../dialog/Dialog.dart';
-import '../customDialog/CustomDialog.dart';
-import '../customScrollView/CustomScrollView.dart';
-import '../refresh/refresh.dart';
-import '../flexBox/FlexBox.dart';
-import '../AnimatedContainer/AnimatedContainer.dart';
-import '../AnimatedSwitcher/AnimatedSwitcher.dart';
-import '../hero/hero.dart';
-import '../moreAnimated/moreAnimated.dart';
-import '../tweenAnimationBuilder/tweenAnimationBuilder.dart';
-import '../rotationTransiton/RotationTransiton.dart';
-import '../StaggeredAnimation/StaggeredAnimation.dart';
-import '../AnimatedBuilder/AnimatedBuilder.dart';
-import '../AnimateMove/AnimateMove.dart';
-import '../CustomPaint/CustomPaint.dart';
-import '../Key/Key.dart';
-import '../DragTheSorting/DragTheSorting.dart';
-import '../myDragSorting/myDragSorting.dart';
+import '/pages/NewsDateal.dart';
+import '/pages/tabs/Tabs.dart';
+import '/pages/Deatail.dart';
+import '/pages/tabBarPage/TabBarPage.dart';
+import '/pages/tabBarController/TabBarController.dart';
+import '/pages/textField/TextField.dart';
+import '/pages/check/check.dart';
+import '/pages/datePicker/DatePicker.dart';
+import '/pages/dialog/Dialog.dart';
+import '/pages/customDialog/CustomDialog.dart';
+import '/pages/customScrollView/CustomScrollView.dart';
+import '/pages/refresh/refresh.dart';
+import '/pages/flexBox/FlexBox.dart';
+import '/pages/AnimatedContainer/AnimatedContainer.dart';
+import '/pages/AnimatedSwitcher/AnimatedSwitcher.dart';
+import '/pages/hero/hero.dart';
+import '/pages/moreAnimated/moreAnimated.dart';
+import '/pages/tweenAnimationBuilder/tweenAnimationBuilder.dart';
+import '/pages/rotationTransiton/RotationTransiton.dart';
+import '/pages/StaggeredAnimation/StaggeredAnimation.dart';
+import '/pages/AnimatedBuilder/AnimatedBuilder.dart';
+import '/pages/AnimateMove/AnimateMove.dart';
+import '/pages/CustomPaint/CustomPaint.dart';
+import '/pages/Key/Key.dart';
+import '/pages/DragTheSorting/DragTheSorting.dart';
+import '/pages/myDragSorting/myDragSorting.dart';
+import '/pages/FutureBuilder/FutureBuilder.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -63,6 +64,7 @@ final routes = {
   '/KeyPage': (context) => KeyPage(),
   '/DragTheSortingPage': (context) => DragTheSortingPage(),
   '/MyDragSortingPage': (context) => MyDragSortingPage(),
+  '/FutureBuilderPage': (context) => FutureBuilderPage(),
 };
 
 // ignore: top_level_function_literal_block
