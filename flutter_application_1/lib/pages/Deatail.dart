@@ -1,3 +1,11 @@
+/*
+ * @Author: Long_jj
+ * @Date: 2021-07-26 20:24:59
+ * @LastEditTime: 2021-08-18 22:09:25
+ * @LastEditors: Long_jj
+ * @Description: 
+ * @FilePath: /flutter_application_1/lib/pages/Deatail.dart
+ */
 import 'package:flutter/material.dart';
 import '../pages/tabs/Tabs.dart';
 
@@ -18,10 +26,13 @@ class Detail extends StatelessWidget {
         ),
       ),
       body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.blue[300],
         child: Stack(
           children: <Widget>[
             Container(
-              width: 400,
+              width: 300,
               height: 400,
               color: Colors.red,
             ),
@@ -38,9 +49,8 @@ class Detail extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                   // Navigator.pop(context, mp);
-                  Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(builder: (context) => Tabs(index: 1)),
-                      (route) => false);
+                  Navigator.of(context)
+                      .pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Tabs(index: 1)), (route) => false);
                 },
                 child: Text('pop返回'))
           ],
