@@ -1,8 +1,13 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-14 09:45:44
- * @LastEditTime: 2021-08-18 16:46:56
+<<<<<<< HEAD
+ * @LastEditTime: 2021-08-19 09:10:17
  * @LastEditors: long_jj
+=======
+ * @LastEditTime: 2021-08-18 21:14:17
+ * @LastEditors: Long_jj
+>>>>>>> 3c1853e9054828e62bde69617794a8f61471e12d
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\tabs\News.dart
  */
@@ -36,11 +41,20 @@ class _NewsPageState extends State<NewsPage> {
           },
         ),
         ElevatedButton(
-          child: Text('StreamBuilder'),
+          child: Text('StreamBuilderPage'),
           onPressed: () {
             Navigator.pushNamed(
               context,
               '/StreamBuilderPage',
+            );
+          },
+        ),
+        ElevatedButton(
+          child: Text('AboutStreamBuilderGamePage'),
+          onPressed: () {
+            Navigator.pushNamed(
+              context,
+              '/AboutStreamBuilderGamePage',
             );
           },
         ),

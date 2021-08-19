@@ -1,11 +1,12 @@
 /*
  * @Author: long_jj
- * @Date: 2021-07-27 09:04:09
- * @LastEditTime: 2021-08-18 15:50:28
+ * @Date: 2021-08-19 09:07:58
+ * @LastEditTime: 2021-08-19 09:09:03
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\route\Routes.dart
  */
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/customScrollView/CustomScrollView.dart';
 
@@ -37,6 +38,7 @@ import '/pages/DragTheSorting/DragTheSorting.dart';
 import '/pages/myDragSorting/myDragSorting.dart';
 import '/pages/FutureBuilder/FutureBuilder.dart';
 import '/pages/streamBuilder/streamBuilder.dart';
+import '/pages/AboutStreamBuildergame/AboutStreamBuildergame.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -67,6 +69,7 @@ final routes = {
   '/MyDragSortingPage': (context) => MyDragSortingPage(),
   '/FutureBuilderPage': (context) => FutureBuilderPage(),
   '/StreamBuilderPage': (context) => StreamBuilderPage(),
+  '/AboutStreamBuilderGamePage': (context) => AboutStreamBuilderGamePage(),
 };
 
 // ignore: top_level_function_literal_block
