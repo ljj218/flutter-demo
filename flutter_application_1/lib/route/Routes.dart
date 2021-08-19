@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-27 09:04:09
- * @LastEditTime: 2021-08-17 10:16:09
+ * @LastEditTime: 2021-08-18 15:50:28
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\route\Routes.dart
@@ -36,6 +36,7 @@ import '/pages/Key/Key.dart';
 import '/pages/DragTheSorting/DragTheSorting.dart';
 import '/pages/myDragSorting/myDragSorting.dart';
 import '/pages/FutureBuilder/FutureBuilder.dart';
+import '/pages/streamBuilder/streamBuilder.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -65,6 +66,7 @@ final routes = {
   '/DragTheSortingPage': (context) => DragTheSortingPage(),
   '/MyDragSortingPage': (context) => MyDragSortingPage(),
   '/FutureBuilderPage': (context) => FutureBuilderPage(),
+  '/StreamBuilderPage': (context) => StreamBuilderPage(),
 };
 
 // ignore: top_level_function_literal_block

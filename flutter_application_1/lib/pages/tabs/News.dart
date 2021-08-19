@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-14 09:45:44
- * @LastEditTime: 2021-08-17 10:15:18
+ * @LastEditTime: 2021-08-18 16:46:56
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\tabs\News.dart
@@ -32,6 +32,15 @@ class _NewsPageState extends State<NewsPage> {
             Navigator.pushNamed(
               context,
               '/newsDetail',
+            );
+          },
+        ),
+        ElevatedButton(
+          child: Text('StreamBuilder'),
+          onPressed: () {
+            Navigator.pushNamed(
+              context,
+              '/StreamBuilderPage',
             );
           },
         ),
