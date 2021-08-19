@@ -1,10 +1,10 @@
 /*
  * @Author: Long_jj
  * @Date: 2021-08-18 21:11:39
- * @LastEditTime: 2021-08-19 15:21:38
- * @LastEditors: long_jj
+ * @LastEditTime: 2021-08-19 21:35:08
+ * @LastEditors: Long_jj
  * @Description: 
- * @FilePath: \flutter_application_1\lib\pages\AboutStreamBuildergame\AboutStreamBuildergame.dart
+ * @FilePath: /flutter_application_1/lib/pages/AboutStreamBuildergame/AboutStreamBuildergame.dart
  */
 
 import 'dart:async';
@@ -16,13 +16,17 @@ class AboutStreamBuilderGamePage extends StatefulWidget {
   AboutStreamBuilderGamePage({Key? key}) : super(key: key);
 
   @override
-  _AboutStreamBuildergamePageState createState() =>
-      _AboutStreamBuildergamePageState();
+  _AboutStreamBuildergamePageState createState() => _AboutStreamBuildergamePageState();
 }
 
-class _AboutStreamBuildergamePageState
-    extends State<AboutStreamBuilderGamePage> {
+class _AboutStreamBuildergamePageState extends State<AboutStreamBuilderGamePage> {
   StreamController<int> _controller = StreamController.broadcast();
+  late double width;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -32,6 +36,7 @@ class _AboutStreamBuildergamePageState
 
   @override
   Widget build(BuildContext context) {
+    width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: StreamBuilder(
@@ -45,7 +50,7 @@ class _AboutStreamBuildergamePageState
       ),
       body: Stack(
         children: [
-          Puzzle(_controller.stream),
+          ...List.generate(3, (index) => Puzzle(_controller.stream, width)),
           Align(
             alignment: Alignment.bottomCenter,
             child: KeyPad(_controller),
@@ -59,7 +64,8 @@ class _AboutStreamBuildergamePageState
 //题目
 class Puzzle extends StatefulWidget {
   final Stream<int> inputStream;
-  Puzzle(this.inputStream);
+  final double width;
+  Puzzle(this.inputStream, this.width);
 
   @override
   _PuzzleState createState() => _PuzzleState(inputStream);
@@ -75,17 +81,17 @@ class _PuzzleState extends State<Puzzle> with SingleTickerProviderStateMixin {
   _PuzzleState(this.inputStream);
 
   reset() {
-    color =
-        Colors.primaries[Random().nextInt(Colors.primaries.length)].shade200;
+    color = Colors.primaries[Random().nextInt(Colors.primaries.length)].shade200;
     a = Random().nextInt(5) + 1;
     b = Random().nextInt(5);
-    x = Random().nextDouble() * 400;
-    _animationController.duration = Duration(seconds: 5 + Random().nextInt(5));
+    x = Random().nextDouble() * widget.width - 20;
+    _animationController.duration = Duration(seconds: 5 + Random().nextInt(4));
     _animationController.forward();
   }
 
   @override
   void initState() {
+    print(1);
     _animationController = AnimationController(vsync: this);
     //初始 _PuzzleState 的状态 以及 AnimationController 注意先后
     reset();
@@ -114,8 +120,7 @@ class _PuzzleState extends State<Puzzle> with SingleTickerProviderStateMixin {
         animation: _animationController,
         builder: (context, child) {
           return Positioned(
-            top:
-                _animationController.value * MediaQuery.of(context).size.height,
+            top: _animationController.value * MediaQuery.of(context).size.height,
             left: x,
             child: Container(
               padding: EdgeInsets.symmetric(
@@ -148,8 +153,7 @@ class KeyPad extends StatelessWidget {
         9,
         (index) => ElevatedButton(
           style: ButtonStyle(
-            backgroundColor:
-                MaterialStateProperty.all(Colors.primaries[index].shade500),
+            backgroundColor: MaterialStateProperty.all(Colors.primaries[index].shade500),
             //边框
             side: MaterialStateProperty.all(
               BorderSide(
