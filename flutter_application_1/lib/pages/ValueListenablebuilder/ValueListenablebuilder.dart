@@ -1,10 +1,11 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-23 15:23:46
- * @LastEditTime: 2021-08-23 17:07:00
- * @LastEditors: long_jj
+ * @LastEditTime: 2021-08-23 21:24:41
+ * @LastEditors: Long_jj
  * @Description: 
- * @FilePath: \flutter_application_1\lib\pages\ValueListenablebuilder\ValueListenablebuilder.dart
+ * @FilePath: /flutter_application_1/lib/pages/ValueListenablebuilder/ValueListenablebuilder.dart
+ http://redirector.gvt1.com/edgedl/android/studio/ide-zips/2020.3.1.23/android-studio-2020.3.1.23-mac_arm.zip
  */
 
 import 'package:flutter/material.dart';
@@ -13,12 +14,10 @@ class ValueListenablebuilderPage extends StatefulWidget {
   ValueListenablebuilderPage({Key? key}) : super(key: key);
 
   @override
-  _ValueListenablebuilderPageState createState() =>
-      _ValueListenablebuilderPageState();
+  _ValueListenablebuilderPageState createState() => _ValueListenablebuilderPageState();
 }
 
-class _ValueListenablebuilderPageState
-    extends State<ValueListenablebuilderPage> {
+class _ValueListenablebuilderPageState extends State<ValueListenablebuilderPage> {
   //初始化 更新后进行比较 新旧值 然后内部调用 notifyListeners
   late ValueNotifier<int> count = ValueNotifier<int>(0);
 
