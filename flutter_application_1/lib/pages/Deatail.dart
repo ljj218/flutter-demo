@@ -1,10 +1,10 @@
 /*
  * @Author: Long_jj
  * @Date: 2021-07-26 20:24:59
- * @LastEditTime: 2021-08-18 22:09:25
- * @LastEditors: Long_jj
+ * @LastEditTime: 2021-08-23 17:00:10
+ * @LastEditors: long_jj
  * @Description: 
- * @FilePath: /flutter_application_1/lib/pages/Deatail.dart
+ * @FilePath: \flutter_application_1\lib\pages\Deatail.dart
  */
 import 'package:flutter/material.dart';
 import '../pages/tabs/Tabs.dart';
@@ -47,12 +47,14 @@ class Detail extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-                onPressed: () {
-                  // Navigator.pop(context, mp);
-                  Navigator.of(context)
-                      .pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Tabs(index: 1)), (route) => false);
-                },
-                child: Text('pop返回'))
+              onPressed: () {
+                // Navigator.pop(context, mp);
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context) => Tabs(index: 1)),
+                    (route) => false);
+              },
+              child: Text('pop返回'),
+            ),
           ],
         ),
       ),

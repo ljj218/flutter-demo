@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-19 09:07:58
- * @LastEditTime: 2021-08-19 09:09:03
+ * @LastEditTime: 2021-08-23 17:02:47
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\route\Routes.dart
@@ -39,6 +39,7 @@ import '/pages/myDragSorting/myDragSorting.dart';
 import '/pages/FutureBuilder/FutureBuilder.dart';
 import '/pages/streamBuilder/streamBuilder.dart';
 import '/pages/AboutStreamBuildergame/AboutStreamBuildergame.dart';
+import '/pages/ValueListenablebuilder/ValueListenablebuilder.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -70,6 +71,7 @@ final routes = {
   '/FutureBuilderPage': (context) => FutureBuilderPage(),
   '/StreamBuilderPage': (context) => StreamBuilderPage(),
   '/AboutStreamBuilderGamePage': (context) => AboutStreamBuilderGamePage(),
+  '/ValueListenablebuilderPage': (context) => ValueListenablebuilderPage(),
 };
 
 // ignore: top_level_function_literal_block

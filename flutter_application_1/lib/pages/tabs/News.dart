@@ -2,7 +2,7 @@
  * @Author: long_jj
  * @Date: 2021-07-14 09:45:44
 <<<<<<< HEAD
- * @LastEditTime: 2021-08-19 09:10:17
+ * @LastEditTime: 2021-08-23 17:03:08
  * @LastEditors: long_jj
 =======
  * @LastEditTime: 2021-08-18 21:14:17
@@ -58,6 +58,17 @@ class _NewsPageState extends State<NewsPage> {
             );
           },
         ),
+        Container(
+          padding: EdgeInsets.all(5),
+          color: Colors.blue[200],
+          child: ListTile(
+            title: Text("ValueListenableBuilder"),
+            subtitle: Text('局部监听值变化刷新的组件'),
+            onTap: () {
+              Navigator.pushNamed(context, '/ValueListenablebuilderPage');
+            },
+          ),
+        )
       ],
     );
   }
