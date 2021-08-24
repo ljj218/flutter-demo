@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-15 09:18:45
- * @LastEditTime: 2021-08-17 10:14:20
+ * @LastEditTime: 2021-08-24 17:16:59
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\NewsDateal.dart
@@ -30,42 +30,10 @@ class _NewsDetailState extends State<NewsDetail> {
       body: Container(
         child: ListView(
           children: <Widget>[
-            ListTile(
-              title: Text('$widget.arguments '),
-            ),
-            ListTile(
-              title: Text('新闻详细~~~'),
-            ),
-            ListTile(
-              title: Text('新闻详细~~~'),
-            ),
-            ListTile(
-              title: Text('新闻详细~~~'),
-            ),
-            ListTile(
-              title: Text('新闻详细~~~'),
-            ),
-            ListTile(
-              title: Text('新闻详细~~~'),
-            ),
-            ListTile(
-              title: Text('新闻详细~~~'),
-            ),
-            ListTile(
-              title: Text('新闻详细~~~'),
-            ),
-            ListTile(
-              title: Text('新闻详细~~~'),
-            ),
-            ListTile(
-              title: Text('新闻详细~~~'),
-            ),
-            ListTile(
-              title: Text('新闻详细~~~'),
-            ),
-            ListTile(
-              title: Text('新闻详细~~~'),
-            ),
+            for (var i = 0; i < 20; i++)
+              ListTile(
+                title: Text('$widget.arguments '),
+              ),
             Container(
               width: 399,
               height: 33,

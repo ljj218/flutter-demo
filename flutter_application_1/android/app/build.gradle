@@ -43,13 +43,13 @@ android {
     signingConfigs {
         release {//发布版本的签名配置
             storeFile file('key.jks') 
-            keyAlias "flutter-demo" 
+            keyAlias "key" 
             storePassword "123456" 
             keyPassword "123456"
         }
         debug {//调试版本的签名配置
             storeFile file('key.jks') 
-            keyAlias "flutter-demo" 
+            keyAlias "key" 
             storePassword "123456" 
             keyPassword "123456"
         } 

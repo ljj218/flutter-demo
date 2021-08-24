@@ -1,10 +1,10 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-19 09:07:58
- * @LastEditTime: 2021-08-23 21:29:54
- * @LastEditors: Long_jj
+ * @LastEditTime: 2021-08-24 17:36:12
+ * @LastEditors: long_jj
  * @Description: 
- * @FilePath: /flutter_application_1/lib/route/Routes.dart
+ * @FilePath: \flutter_application_1\lib\route\Routes.dart
  */
 
 import 'package:flutter/material.dart';
@@ -41,6 +41,8 @@ import '/pages/streamBuilder/streamBuilder.dart';
 import '/pages/AboutStreamBuildergame/AboutStreamBuildergame.dart';
 import '/pages/ValueListenablebuilder/ValueListenablebuilder.dart';
 import '/pages/Location/Location.dart';
+import '/pages/CustomMultiChildlayout/CustomMultiChildlayout.dart';
+import '/pages/OrientationBuilderTest/OrientationBuilderTest.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -74,6 +76,8 @@ final routes = {
   '/AboutStreamBuilderGamePage': (context) => AboutStreamBuilderGamePage(),
   '/ValueListenablebuilderPage': (context) => ValueListenablebuilderPage(),
   '/LocationPage': (context) => LocationPage(),
+  '/CustomMultiChildlayoutPage': (context) => CustomMultiChildlayoutPage(),
+  '/OrientationBuilderTestPage': (context) => OrientationBuilderTestPage(),
 };
 
 // ignore: top_level_function_literal_block
@@ -84,11 +88,14 @@ var onGenerateRoute = (RouteSettings settings) {
   if (pageContentBuilder != null) {
     if (settings.arguments != null) {
       // ignore: non_constant_identifier_names
-      final Route = MaterialPageRoute(builder: (context) => pageContentBuilder(context, arguments: settings.arguments));
+      final Route = MaterialPageRoute(
+          builder: (context) =>
+              pageContentBuilder(context, arguments: settings.arguments));
       return Route;
     } else {
       // ignore: non_constant_identifier_names
-      final Route = MaterialPageRoute(builder: (context) => pageContentBuilder(context));
+      final Route =
+          MaterialPageRoute(builder: (context) => pageContentBuilder(context));
       return Route;
     }
   }

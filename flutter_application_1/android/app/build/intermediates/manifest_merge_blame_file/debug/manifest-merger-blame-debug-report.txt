@@ -1,0 +1,120 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.flutter_application_1"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+9        android:targetSdkVersion="30" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:4:5-67
+14-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:4:22-64
+15    <!-- 粗略定位 -->
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 精确定位 -->
+16-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:6:5-81
+16-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:6:22-78
+17    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 申请调用 A-GPS 模块 -->
+17-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:7:5-79
+17-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:7:22-76
+18    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> <!-- 用于获取运营商信息，用于支持提供运营商信息相关的接口 -->
+18-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:8:5-9:72
+18-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:9:5-69
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 用于访问 wifi 网络信息，wifi 信息会用于进行网络定位 -->
+19-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:9:107-181
+19-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:9:124-178
+20    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 用于获取 wifi 的获取权限，wifi 信息会用来进行网络定位 -->
+20-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:10:5-76
+20-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:10:22-73
+21    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 用于读取手机当前的状态 -->
+21-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:10:117-188
+21-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:10:134-185
+22    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 用于写入缓存数据到扩展存储卡 -->
+22-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:11:5-75
+22-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:11:22-72
+23    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+23-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:12:5-81
+23-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:12:22-78
+24
+25    <application
+25-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:13:4-53:19
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\2d5f0824dcd2e5687cd583bfd5686084\core-1.1.0\AndroidManifest.xml:24:18-86
+27        android:debuggable="true"
+28        android:icon="@mipmap/ic_launcher"
+28-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:15:9-43
+29        android:label="flutter_application_1" >
+29-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:14:9-46
+30        <activity
+30-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:17:9-45:20
+31            android:name="com.example.flutter_application_1.MainActivity"
+31-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:18:13-41
+32            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+32-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:21:13-163
+33            android:hardwareAccelerated="true"
+33-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:22:13-47
+34            android:launchMode="singleTop"
+34-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:19:13-43
+35            android:theme="@style/LaunchTheme"
+35-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:20:13-47
+36            android:windowSoftInputMode="adjustResize" >
+36-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:23:13-55
+37
+38            <!--
+39                 Specifies an Android theme to apply to this Activity as soon as
+40                 the Android process has started. This theme is visible to the user
+41                 while the Flutter UI initializes. After that, this theme continues
+42                 to determine the Window background behind the Flutter UI.
+43            -->
+44            <meta-data
+44-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:28:13-31:17
+45                android:name="io.flutter.embedding.android.NormalTheme"
+45-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:29:15-70
+46                android:resource="@style/NormalTheme" />
+46-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:30:15-52
+47            <!--
+48                 Displays an Android View that continues showing the launch screen
+49                 Drawable until Flutter paints its first frame, then this splash
+50                 screen fades out. A splash screen is useful to avoid any visual
+51                 gap between the end of Android's launch screen and the painting of
+52                 Flutter's first frame.
+53            -->
+54            <meta-data
+54-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:37:13-40:17
+55                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+55-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:38:15-79
+56                android:resource="@drawable/launch_background" />
+56-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:39:15-61
+57
+58            <intent-filter>
+58-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:41:13-44:29
+59                <action android:name="android.intent.action.MAIN" />
+59-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:42:17-68
+59-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:42:25-66
+60
+61                <category android:name="android.intent.category.LAUNCHER" />
+61-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:43:17-76
+61-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:43:27-74
+62            </intent-filter>
+63        </activity>
+64        <!--
+65             Don't delete the meta-data below.
+66             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+67        -->
+68        <meta-data
+68-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:48:9-50:33
+69            android:name="flutterEmbedding"
+69-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:49:13-44
+70            android:value="2" />
+70-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:50:13-30
+71        <!-- 配置定位 Service -->
+72        <service android:name="com.amap.api.location.APSService" />
+72-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:52:9-67
+72-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:52:18-65
+73    </application>
+74
+75</manifest>

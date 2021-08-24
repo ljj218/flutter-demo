@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-07-13 17:29:50
- * @LastEditTime: 2021-08-06 16:39:16
+ * @LastEditTime: 2021-08-24 17:27:17
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\tabs\Tabs.dart
@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'Home.dart';
 import 'News.dart';
 import 'Setting.dart';
+import 'prictic.dart';
 
 class Tabs extends StatefulWidget {
   final index;
@@ -26,7 +27,7 @@ class _TabsePageState extends State<Tabs> {
     this._currentIndex = index;
   }
 
-  List<Widget> list = [HomePage(), NewsPage(), SettingPage()];
+  List<Widget> list = [HomePage(), NewsPage(), SettingPage(), Prictic()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +39,7 @@ class _TabsePageState extends State<Tabs> {
       ),
       body: this.list[this._currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.compare),
@@ -62,6 +64,14 @@ class _TabsePageState extends State<Tabs> {
               color: Colors.blue,
             ),
             label: '动画',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.camera),
+            activeIcon: Icon(
+              Icons.camera,
+              color: Colors.blue,
+            ),
+            label: '趣味组件',
           ),
         ],
         currentIndex: this._currentIndex,

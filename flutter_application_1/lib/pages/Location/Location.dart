@@ -1,10 +1,10 @@
 /*
  * @Author: Long_jj
  * @Date: 2021-08-23 21:26:54
- * @LastEditTime: 2021-08-23 22:26:09
- * @LastEditors: Long_jj
+ * @LastEditTime: 2021-08-24 11:17:20
+ * @LastEditors: long_jj
  * @Description: 
- * @FilePath: /flutter_application_1/lib/pages/location/Location.dart
+ * @FilePath: \flutter_application_1\lib\pages\Location\Location.dart
  * SHA1: 4A:36:2C:9D:0E:B7:98:F0:7D:69:20:EC:88:74:CD:2D:C7:E5:B2:7F
  * test SHA1: AE:9A:2D:59:1D:AE:26:65:D9:5B:49:68:4C:AA:FA:10:8A:91:83:FF
  */
@@ -49,7 +49,9 @@ class _LocationPageState extends State<LocationPage> {
     // }
 
     ///注册定位结果监听
-    _locationListener = _locationPlugin.onLocationChanged().listen((Map<String, Object> result) {
+    _locationListener = _locationPlugin
+        .onLocationChanged()
+        .listen((Map<String, Object> result) {
       setState(() {
         _locationResult = result;
       });
@@ -69,7 +71,8 @@ class _LocationPageState extends State<LocationPage> {
     ///逆地理信息的语言类型
     locationOption.geoLanguage = GeoLanguage.DEFAULT;
 
-    locationOption.desiredLocationAccuracyAuthorizationMode = AMapLocationAccuracyAuthorizationMode.ReduceAccuracy;
+    locationOption.desiredLocationAccuracyAuthorizationMode =
+        AMapLocationAccuracyAuthorizationMode.ReduceAccuracy;
 
     locationOption.fullAccuracyPurposeKey = "AMapLocationScene";
 
@@ -159,13 +162,40 @@ class _LocationPageState extends State<LocationPage> {
 
   @override
   Widget build(BuildContext context) {
+    // var province = _locationResult!['province'];
+    print('refrash');
     return Scaffold(
       appBar: AppBar(
         title: Text('高德定位测试'),
       ),
-      body: Center(
-        child: Text('postion'),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('$_locationResult'),
+          Divider(),
+
+          // ...list
+          // ...List.generate(list.length, (index) => Text('${list[index]}')),
+          Column(
+            children: _locationResult != null ? creatList() : [],
+          )
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _startLocation,
+        child: Icon(Icons.star),
       ),
     );
+  }
+
+  creatList() {
+    List<Widget> list = [];
+    if (_locationResult != null) {
+      _locationResult!.forEach((key, value) {
+        list.add(Text('$key - $value'));
+      });
+      print(list.length);
+      return list.length > 0 ? list : list.add(Text("data"));
+    }
   }
 }
