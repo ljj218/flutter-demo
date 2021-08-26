@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!--用于写入缓存数据到扩展存储卡-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
    <application
-        android:label="flutter_application_1"
+        android:label="flutter测试版本"
         android:icon="@mipmap/ic_launcher">
         
         <activity
