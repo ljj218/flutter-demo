@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-10 10:04:58
- * @LastEditTime: 2021-08-10 14:00:16
+ * @LastEditTime: 2021-08-25 10:00:08
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\AnimatedBuilder\AnimatedBuilder.dart
@@ -54,6 +54,8 @@ class _AnimatedBuilderPageState extends State<AnimatedBuilderPage>
                 // width: 200,
                 width: Tween<double>(begin: 200, end: 400)
                     .evaluate(_animationController),
+                // width: Tween<double>(begin: 200, end: 400).animate(_animationController)
+
                 height: 200 + 100 * _animationController.value,
                 // height: Tween<double>(begin: 200, end: 400)
                 //     .evaluate(_animationController),

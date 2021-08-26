@@ -1,13 +1,17 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-10 14:07:45
- * @LastEditTime: 2021-08-11 10:34:52
+ * @LastEditTime: 2021-08-25 16:59:11
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\AnimateMove\AnimateMove.dart
  */
 
 import 'package:flutter/material.dart';
+
+import 'DianZan.dart';
+import 'DianZan2.dart';
+import './AnimatedCrossFade.dart';
 
 class AnimateMovePage extends StatefulWidget {
   AnimateMovePage({Key? key}) : super(key: key);
@@ -82,36 +86,6 @@ class _AnimateMovePageState extends State<AnimateMovePage>
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              width: 200,
-              height: 30,
-              child: Row(
-                children: [
-                  Text("$num"),
-                  GestureDetector(
-                    onTap: () {
-                      _animationController.forward();
-                    },
-                    child: AnimatedBuilder(
-                      animation: _animationController,
-                      builder: (context, child) {
-                        return Transform.scale(
-                          scale: Tween<double>(begin: 1.0, end: 1.3)
-                              .chain(CurveTween(curve: Curves.easeInOut))
-                              .evaluate(_animationController),
-                          child: Icon(
-                            Icons.lens_sharp,
-                            color: flag ? Colors.red : null,
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 30),
-            Divider(),
             SizedBox(height: 30),
             Text('478呼吸法动画'),
             AnimatedBuilder(
@@ -172,6 +146,26 @@ class _AnimateMovePageState extends State<AnimateMovePage>
                 ),
               ],
             ),
+            SizedBox(height: 60),
+            Divider(color: Colors.red),
+            DianZan(),
+            SizedBox(height: 60),
+            Divider(color: Colors.red),
+            DianZan2(),
+            Container(
+              width: 50,
+              height: 50,
+              decoration: BoxDecoration(
+                  // color: Colors.red,
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.blue,
+                    width: 2,
+                  )),
+            ),
+            Divider(color: Colors.red),
+            AnimatedCrossFadeDemo(),
+            Divider(color: Colors.red),
           ],
         ),
       ),

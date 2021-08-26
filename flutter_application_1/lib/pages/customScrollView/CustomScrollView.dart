@@ -1,10 +1,10 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-02 11:10:17
- * @LastEditTime: 2021-08-05 17:30:09
+ * @LastEditTime: 2021-08-25 17:51:55
  * @LastEditors: long_jj
  * @Description: 
- * @FilePath: \flutter_application_1\lib\pages\customScrollView\customScrollView.dart
+ * @FilePath: \flutter_application_1\lib\pages\customScrollView\CustomScrollView.dart
  */
 import 'dart:async';
 
@@ -64,7 +64,7 @@ class _CustomScrollViewPageState extends State<CustomScrollViewPage> {
           ),
         ),
         SliverList(
-          delegate: SliverChildBuilderDelegate((content, index) {
+          delegate: SliverChildBuilderDelegate((context, index) {
             return Container(
                 height: 85,
                 alignment: Alignment.center,

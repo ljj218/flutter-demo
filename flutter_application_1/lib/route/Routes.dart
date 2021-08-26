@@ -1,14 +1,17 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-19 09:07:58
- * @LastEditTime: 2021-08-24 17:36:12
+ * @LastEditTime: 2021-08-25 15:33:41
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\route\Routes.dart
  */
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/customScrollView/CustomScrollView.dart';
+
+import '../tool/CirclePageRoute.dart';
 
 import '/pages/NewsDateal.dart';
 import '/pages/tabs/Tabs.dart';
@@ -95,7 +98,9 @@ var onGenerateRoute = (RouteSettings settings) {
     } else {
       // ignore: non_constant_identifier_names
       final Route =
-          MaterialPageRoute(builder: (context) => pageContentBuilder(context));
+          CupertinoPageRoute(builder: (context) => pageContentBuilder(context));
+      // final Route =
+      //     CirclePageRoute(builder: (context) => pageContentBuilder(context));
       return Route;
     }
   }

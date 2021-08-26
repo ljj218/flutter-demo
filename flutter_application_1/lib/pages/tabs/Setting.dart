@@ -1,7 +1,7 @@
 /*
  * @Author: Long_jj
  * @Date: 2021-07-20 09:58:34
- * @LastEditTime: 2021-08-12 15:04:05
+ * @LastEditTime: 2021-08-25 17:32:21
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\tabs\Setting.dart
@@ -141,27 +141,76 @@ class _SettingPageState extends State<SettingPage> {
               ),
               SizedBox(height: 50),
               ElevatedButton(
+                // style: ButtonStyle(
+
+                // ),
+                style: ElevatedButton.styleFrom(),
                 onPressed: () {
                   Navigator.pushNamed(context, '/AnimateMovePage');
                 },
                 child: Text('动画效果练习'),
               ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: [
+                    Text('动画的理解'),
+                    Text(
+                        '主要通过控制器来控制动画的开始，结束，往复，监听进程，Animation用来添加动画的状态-贝塞尔曲线，Animation需要挂在controll上'),
+                    Text(
+                        'Animation<double> angleAnimation = new Tween(begin: 0.0, end: pi/2).animate(    new CurvedAnimation('),
+                    Text('parent: _controller,'),
+                    Text('curve:  Curves.ease,'),
+                    Text('reverseCurve: Curves.easeOut,'),
+                    Text('));'),
+                  ],
+                ),
+              )
             ],
           ),
         )
       ],
     );
   }
-
-  // ignore: non_constant_identifier_names
-  // List<Widget> CreateList() {
-  //   List<Widget> list = List.generate(
-  //     20,
-  //     (index) => ListTile(
-  //       title: Text('测试页面含有底部navbar是否正常'),
-  //       onTap: () {},
-  //     ),
-  //   );
-  //   return list;
-  // }
 }
+//AnimationController _controller
+// Animation<double> angleAnimation = new Tween(begin: 0.0, end: pi/2).animate(    new CurvedAnimation(
+//         parent: _controller,
+//         curve:  Curves.ease,
+//         reverseCurve: Curves.easeOut
+//     ));
+
+
+// Animation<Offset>
+//  AnimationController;
+// Tween(begin: Offset.zero, end: Offset(0.1, 0)).chain(CurveTween(curve: Interval(0.8, 1.0))).animate(AnimationController)
+
+
+// 序列 前50% 1.0-1.3 后50% 1.3-1.0
+//_iconAnimation = TweenSequence([
+//    TweenSequenceItem(
+//        tween: Tween(begin: 1.0, end: 1.3)
+//            .chain(CurveTween(curve: Curves.easeIn)),
+//        weight: 50),
+//    TweenSequenceItem(tween: Tween(begin: 1.3, end: 1.0), weight: 50),
+//  ]).animate(_animationController);
+
+
+//变化颜色 时间是 0-0.5 前半段 变换尺寸 0.5-1.0 
+//  _colorAnimation = ColorTween(begin: Colors.red, end: Colors.blue).animate(
+//         CurvedAnimation(
+//             parent: _animationController, curve: Interval(0.0, 0.5)));
+
+//     _sizeAnimation = Tween(begin: 100.0, end: 300.0).animate(CurvedAnimation(
+//         parent: _animationController, curve: Interval(0.5, 1.0)));
+
+
+//，动画时长为6秒，前40%的时间大小从100->200，然后保持200不变20%的时间，最后40%的时间大小从200->300，这种效果通过TweenSequence实现，代码如下：
+// _animation = TweenSequence([
+//   TweenSequenceItem(
+//       tween: Tween(begin: 100.0, end: 200.0)
+//           .chain(CurveTween(curve: Curves.easeIn)),
+//       weight: 40),
+//   TweenSequenceItem(tween: ConstantTween<double>(200.0), weight: 20),
+//   TweenSequenceItem(tween: Tween(begin: 200.0, end: 300.0), weight: 40),
+// ]).animate(_animationController);
