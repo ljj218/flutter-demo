@@ -36,6 +36,7 @@ dependencies:
       url: https://github.com/Realank/flutter_datetime_picker.git
   fluttertoast: ^8.0.7
   dio: ^4.0.0
+  http: ^0.13.3
   amap_flutter_location: ^2.0.0
   permission_handler: ^8.1.4+2
   

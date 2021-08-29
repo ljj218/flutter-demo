@@ -1,10 +1,10 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-02 11:10:17
- * @LastEditTime: 2021-08-25 17:51:55
- * @LastEditors: long_jj
+ * @LastEditTime: 2021-08-29 21:57:06
+ * @LastEditors: Long_jj
  * @Description: 
- * @FilePath: \flutter_application_1\lib\pages\customScrollView\CustomScrollView.dart
+ * @FilePath: /flutter_application_1/lib/pages/customScrollView/CustomScrollView.dart
  */
 import 'dart:async';
 
@@ -95,8 +95,7 @@ class _CustomScrollViewPageState extends State<CustomScrollViewPage> {
         ),
         SliverFixedExtentList(
           itemExtent: 50.0,
-          delegate:
-              SliverChildBuilderDelegate((BuildContext context, int index) {
+          delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
             return new Container(
               alignment: Alignment.center,
               color: Colors.lightBlue[100 * (index % 9)],

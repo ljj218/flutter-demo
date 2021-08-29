@@ -46,6 +46,7 @@ import '/pages/ValueListenablebuilder/ValueListenablebuilder.dart';
 import '/pages/Location/Location.dart';
 import '/pages/CustomMultiChildlayout/CustomMultiChildlayout.dart';
 import '/pages/OrientationBuilderTest/OrientationBuilderTest.dart';
+import '/pages/CustomScorollViewSNHDemo/CustomScorollViewSNHDemo.dart';
 
 final routes = {
   '/': (context) => Tabs(),
@@ -81,6 +82,7 @@ final routes = {
   '/LocationPage': (context) => LocationPage(),
   '/CustomMultiChildlayoutPage': (context) => CustomMultiChildlayoutPage(),
   '/OrientationBuilderTestPage': (context) => OrientationBuilderTestPage(),
+  '/CustomScorollViewSNHDemoPage': (context) => CustomScorollViewSNHDemo(),
 };
 
 // ignore: top_level_function_literal_block

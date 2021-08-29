@@ -21,6 +21,13 @@ class Prictic extends StatelessWidget {
           onTap: () {
             Navigator.pushNamed(context, '/OrientationBuilderTestPage');
           },
+        ),
+        ListTile(
+          title: Text('sliver滚动模式练习'),
+          subtitle: Text('利用 CustomScorollView'),
+          onTap: () {
+            Navigator.pushNamed(context, '/CustomScorollViewSNHDemoPage');
+          },
         )
       ],
     );
