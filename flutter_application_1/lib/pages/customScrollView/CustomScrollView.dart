@@ -1,7 +1,7 @@
 /*
  * @Author: long_jj
  * @Date: 2021-08-02 11:10:17
- * @LastEditTime: 2021-08-25 17:51:55
+ * @LastEditTime: 2021-08-26 15:37:28
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\customScrollView\CustomScrollView.dart
@@ -37,14 +37,22 @@ class _CustomScrollViewPageState extends State<CustomScrollViewPage> {
       physics: BouncingScrollPhysics(),
       slivers: <Widget>[
         SliverAppBar(
-          pinned: true,
+          // pinned: true,//钉住
+          floating: true, //浮在上面
+          snap: true, //突然的~ 配合floating 下滑 SliverAppBar 快速出现
           expandedHeight: 230.0,
+          stretch: true, //配合stretchModes
           flexibleSpace: FlexibleSpaceBar(
             title: Text('复仇者联盟'),
             background: Image.network(
               'http://img.haote.com/upload/20180918/2018091815372344164.jpg',
               fit: BoxFit.cover,
             ),
+            stretchModes: [
+              StretchMode.zoomBackground,
+              StretchMode.blurBackground,
+              StretchMode.fadeTitle
+            ],
           ),
         ),
         SliverGrid.count(

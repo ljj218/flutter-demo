@@ -1,7 +1,7 @@
 /*
  * @Author: Long_jj
  * @Date: 2021-07-20 09:58:34
- * @LastEditTime: 2021-08-25 17:32:21
+ * @LastEditTime: 2021-08-26 10:40:14
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\tabs\Setting.dart
@@ -165,7 +165,19 @@ class _SettingPageState extends State<SettingPage> {
                     Text('));'),
                   ],
                 ),
-              )
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    Scaffold.of(context).showBottomSheet((context) => Container(
+                          width: double.infinity,
+                          height: 50,
+                          color: Colors.blue[200],
+                          child: Center(
+                            child: Icon(Icons.safety_divider),
+                          ),
+                        ));
+                  },
+                  child: Text('ceshi'))
             ],
           ),
         )

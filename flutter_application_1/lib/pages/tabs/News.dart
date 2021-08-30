@@ -1,13 +1,8 @@
 /*
  * @Author: long_jj
- * @Date: 2021-07-14 09:45:44
-<<<<<<< HEAD
- * @LastEditTime: 2021-08-24 11:37:15
+ * @Date: 2021-08-19 09:07:44
+ * @LastEditTime: 2021-08-26 10:54:55
  * @LastEditors: long_jj
-=======
- * @LastEditTime: 2021-08-18 21:14:17
- * @LastEditors: Long_jj
->>>>>>> 3c1853e9054828e62bde69617794a8f61471e12d
  * @Description: 
  * @FilePath: \flutter_application_1\lib\pages\tabs\News.dart
  */

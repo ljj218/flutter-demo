@@ -1,10 +1,10 @@
 /*
  * @Author: Long_jj
  * @Date: 2021-08-10 21:19:27
- * @LastEditTime: 2021-08-10 22:04:52
- * @LastEditors: Long_jj
+ * @LastEditTime: 2021-08-26 16:37:06
+ * @LastEditors: long_jj
  * @Description: 
- * @FilePath: /flutter_application_1/lib/pages/CustomPaint/CustomPaint.dart
+ * @FilePath: \flutter_application_1\lib\pages\CustomPaint\CustomPaint.dart
  */
 
 import 'dart:math';
@@ -18,13 +18,16 @@ class CustomPaintPage extends StatefulWidget {
   _CustomPaintPageState createState() => _CustomPaintPageState();
 }
 
-class _CustomPaintPageState extends State<CustomPaintPage> with SingleTickerProviderStateMixin {
+class _CustomPaintPageState extends State<CustomPaintPage>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   List<Snowflake> snowFlake = List.generate(200, (index) => Snowflake());
 
   @override
   void initState() {
-    _controller = AnimationController(vsync: this, duration: Duration(seconds: 1))..repeat();
+    _controller =
+        AnimationController(vsync: this, duration: Duration(seconds: 1))
+          ..repeat();
     super.initState();
   }
 
@@ -68,6 +71,7 @@ class _CustomPaintPageState extends State<CustomPaintPage> with SingleTickerProv
 class Mypaint extends CustomPainter {
   List<Snowflake> snowFlake;
 
+  // Mypaint(this.snowFlake):super(repaint:controll );//通过 repaint 传递 controll 进行监听
   Mypaint(this.snowFlake);
   //初始化画笔
   Paint _paint = Paint()..color = Colors.white;
@@ -76,7 +80,10 @@ class Mypaint extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     // canvas.drawCircle(Offset(size.width / 2, size.height / 2), 40, _paint);
     canvas.drawCircle(size.center(Offset(0, 70)), 40, _paint);
-    canvas.drawOval(Rect.fromCenter(center: size.center(Offset(0, 200)), width: 150, height: 200), _paint);
+    canvas.drawOval(
+        Rect.fromCenter(
+            center: size.center(Offset(0, 200)), width: 150, height: 200),
+        _paint);
     snowFlake.forEach((item) {
       canvas.drawCircle(Offset(item.x, item.y), item.radius, _paint);
     });
