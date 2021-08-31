@@ -85,7 +85,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ad
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\2d5f0824dcd2e5687cd583bfd5686084\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:14:9-46
+		ADDED from D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:14:9-36
 	android:icon
 		ADDED from D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:15:9-43
 activity#com.example.flutter_application_1.MainActivity

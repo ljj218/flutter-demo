@@ -1,10 +1,10 @@
 /*
  * @Author: Long_jj
  * @Date: 2021-08-26 22:02:53
- * @LastEditTime: 2021-08-29 22:12:56
- * @LastEditors: Long_jj
+ * @LastEditTime: 2021-08-30 16:05:22
+ * @LastEditors: long_jj
  * @Description: 
- * @FilePath: /flutter_application_1/lib/pages/CustomScorollViewSNHDemo/CustomScorollViewSNHDemo.dart
+ * @FilePath: \flutter_application_1\lib\pages\CustomScorollViewSNHDemo\CustomScorollViewSNHDemo.dart
  */
 import 'dart:math';
 
@@ -18,7 +18,8 @@ class CustomScorollViewSNHDemo extends StatefulWidget {
   const CustomScorollViewSNHDemo({Key? key}) : super(key: key);
 
   @override
-  _CustomScorollViewSNHDemoState createState() => _CustomScorollViewSNHDemoState();
+  _CustomScorollViewSNHDemoState createState() =>
+      _CustomScorollViewSNHDemoState();
 }
 
 class _CustomScorollViewSNHDemoState extends State<CustomScorollViewSNHDemo> {
@@ -31,8 +32,8 @@ class _CustomScorollViewSNHDemoState extends State<CustomScorollViewSNHDemo> {
   }
 
   _getHttpGridData() async {
-    var url =
-        Uri.parse('https://h5.48.cn/resource/jsonp/allmembers.php?gid=00&callback=get_members_success&_=1629985910907');
+    var url = Uri.parse(
+        'https://h5.48.cn/resource/jsonp/allmembers.php?gid=00&callback=get_members_success&_=1629985910907');
     try {
       var res = await http.get(url);
       // print(res.statusCode);
@@ -70,36 +71,43 @@ class _CustomScorollViewSNHDemoState extends State<CustomScorollViewSNHDemo> {
         child: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
+              pinned: true,
               title: Text('SHN'),
             ),
             SliverToBoxAdapter(),
             SliverPersistentHeader(
-              delegate: MySliverPersistentHeaderDelegate('SII', 'https://www.snh48.com/images/ot/mem_s_bt.jpg'),
+              delegate: MySliverPersistentHeaderDelegate(
+                  'SII', 'https://www.snh48.com/images/ot/mem_s_bt.jpg'),
               pinned: true,
             ),
             _buildTeamList('SII'),
             SliverPersistentHeader(
-              delegate: MySliverPersistentHeaderDelegate('NII', 'https://www.snh48.com/images/ot/mem_n_bt.jpg'),
+              delegate: MySliverPersistentHeaderDelegate(
+                  'NII', 'https://www.snh48.com/images/ot/mem_n_bt.jpg'),
               pinned: true,
             ),
             _buildTeamList('NII'),
             SliverPersistentHeader(
-              delegate: MySliverPersistentHeaderDelegate('HII', 'https://www.snh48.com/images/ot/mem_h_bt.jpg'),
+              delegate: MySliverPersistentHeaderDelegate(
+                  'HII', 'https://www.snh48.com/images/ot/mem_h_bt.jpg'),
               pinned: true,
             ),
             _buildTeamList('HII'),
             SliverPersistentHeader(
-              delegate: MySliverPersistentHeaderDelegate('X', 'https://www.snh48.com/images/ot/mem_x_bt.jpg'),
+              delegate: MySliverPersistentHeaderDelegate(
+                  'X', 'https://www.snh48.com/images/ot/mem_x_bt.jpg'),
               pinned: true,
             ),
             _buildTeamList('X'),
             SliverPersistentHeader(
-              delegate: MySliverPersistentHeaderDelegate('J', 'https://www.snh48.com/images/ot/mem_j_bt.jpg'),
+              delegate: MySliverPersistentHeaderDelegate(
+                  'J', 'https://www.snh48.com/images/ot/mem_j_bt.jpg'),
               pinned: true,
             ),
             _buildTeamList('J'),
             SliverPersistentHeader(
-              delegate: MySliverPersistentHeaderDelegate('荣誉毕业生', 'https://www.snh48.com/images/ot/mem_bys_bt.jpg'),
+              delegate: MySliverPersistentHeaderDelegate(
+                  '荣誉毕业生', 'https://www.snh48.com/images/ot/mem_bys_bt.jpg'),
               pinned: true,
             ),
             _buildTeamList('荣誉毕业生'),
@@ -113,7 +121,8 @@ class _CustomScorollViewSNHDemoState extends State<CustomScorollViewSNHDemo> {
   }
 
   SliverGrid _buildTeamList(String teamName) {
-    List<Member> team = _members.where((item) => item.tname == teamName).toList();
+    List<Member> team =
+        _members.where((item) => item.tname == teamName).toList();
     return SliverGrid(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
@@ -123,7 +132,10 @@ class _CustomScorollViewSNHDemoState extends State<CustomScorollViewSNHDemo> {
       delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
         return InkWell(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => PlayerInfo(team[index])));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => PlayerInfo(team[index])));
           },
           child: Container(
             child: Column(
@@ -133,15 +145,11 @@ class _CustomScorollViewSNHDemoState extends State<CustomScorollViewSNHDemo> {
                   tag: team[index].log,
                   child: CircleAvatar(
                     radius: 30,
-                    foregroundImage: NetworkImage('https://www.snh48.com/images/temp/vote8/zx8_def_s.png'),
+                    foregroundImage: NetworkImage(
+                        'https://www.snh48.com/images/temp/vote8/zx8_def_s.png'),
                     backgroundImage: NetworkImage(team[index].log),
                   ),
                 ),
-                // CircleAvatar(
-                //   radius: 30,
-                //   foregroundImage: NetworkImage('https://www.snh48.com/images/temp/vote8/zx8_def_s.png'),
-                //   backgroundImage: NetworkImage(team[index].log),
-                // ),
                 SizedBox(height: 4),
                 Text(
                   team[index].name,
@@ -163,7 +171,8 @@ class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
   String url;
   MySliverPersistentHeaderDelegate(this.title, this.url);
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
@@ -249,6 +258,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
     final color = '0xff${info.tcolor}';
     return Scaffold(
       body: CustomScrollView(
+        physics: BouncingScrollPhysics(),
         slivers: [
           SliverAppBar(
             leading: BackButton(
@@ -257,8 +267,10 @@ class _PlayerInfoState extends State<PlayerInfo> {
             expandedHeight: 200,
             backgroundColor: Color(int.parse(color)),
             pinned: true, //顶住顶部
+            // floating: true, //浮在上面
             stretch: true, //配合 stretchModes
             flexibleSpace: FlexibleSpaceBar(
+              title: Text('${info.name}'),
               background: Hero(
                 tag: info.log,
                 child: Image.network(
@@ -266,9 +278,8 @@ class _PlayerInfoState extends State<PlayerInfo> {
                   fit: BoxFit.cover,
                 ),
               ),
-              title: Text('${info.name}'),
               stretchModes: [
-                StretchMode.blurBackground,
+                // StretchMode.blurBackground,
                 StretchMode.fadeTitle,
                 StretchMode.zoomBackground,
               ],
@@ -297,10 +308,14 @@ class _PlayerInfoState extends State<PlayerInfo> {
           ),
           SliverList(
             delegate: SliverChildListDelegate([
-              Image.network('https://www.snh48.com/images/member/gs4_${widget.info.id}_1.jpg'),
-              Image.network('https://www.snh48.com/images/member/gs4_${widget.info.id}_2.jpg'),
-              Image.network('https://www.snh48.com/images/member/gs4_${widget.info.id}_3.jpg'),
-              Image.network('https://www.snh48.com/images/member/gs4_${widget.info.id}_4.jpg'),
+              Image.network(
+                  'https://www.snh48.com/images/member/gs4_${widget.info.id}_1.jpg'),
+              Image.network(
+                  'https://www.snh48.com/images/member/gs4_${widget.info.id}_2.jpg'),
+              Image.network(
+                  'https://www.snh48.com/images/member/gs4_${widget.info.id}_3.jpg'),
+              Image.network(
+                  'https://www.snh48.com/images/member/gs4_${widget.info.id}_4.jpg'),
             ]),
           ),
         ],

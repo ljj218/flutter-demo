@@ -47,8 +47,8 @@
 27        android:debuggable="true"
 28        android:icon="@mipmap/ic_launcher"
 28-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:15:9-43
-29        android:label="flutter_application_1" >
-29-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:14:9-46
+29        android:label="flutter测试版本" >
+29-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:14:9-36
 30        <activity
 30-->D:\flutter-demo\flutter_application_1\android\app\src\main\AndroidManifest.xml:17:9-45:20
 31            android:name="com.example.flutter_application_1.MainActivity"
